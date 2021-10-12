@@ -25,7 +25,7 @@ class HotelsController < ApplicationController
 
     respond_to do |format|
       if @hotel.save
-        format.html { redirect_to @hotel, notice: "Hotel was successfully created." }
+        format.html { redirect_to :hotels, notice: "Hotel was successfully created." }
         format.json { render :show, status: :created, location: @hotel }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -56,7 +56,15 @@ class HotelsController < ApplicationController
     end
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
+    def set_q
+      @q = User.ransack(params[:q])
+    end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_hotel
       @hotel = Hotel.find(params[:id])

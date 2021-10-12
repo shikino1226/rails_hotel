@@ -1,9 +1,11 @@
-ja:
-  activerecord:
-    attributes:
-      user:
-        name: 名前
-        email: メールアドレス
-        password: パスワード
-        password_confirmation: 確認用パスワード
-        remember_me: 次回から自動的にログイン
+    ja:
+      activerecord:
+        models:
+          user: ユーザー
+        attributes:
+          hotel:
+            name: ホテル名
+            introduction: 情報
+            price: 価格
+            address: 場所
+            
