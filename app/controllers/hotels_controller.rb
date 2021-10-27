@@ -5,10 +5,12 @@ class HotelsController < ApplicationController
   # GET /hotels or /hotels.json
   def index
     @hotels = Hotel.all
+    @reserves = Reserve.all
   end
 
   # GET /hotels/1 or /hotels/1.json
   def show
+    @reserve = Reserve.new
   end
 
   # GET /hotels/new

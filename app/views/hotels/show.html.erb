@@ -20,5 +20,40 @@
   <%= @hotel.address %>
 </p>
 
+
+<h3>予約登録</h3>
+
+<%= form_with model: @reserve do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :check_in ,"チェックイン" %></th>
+      <td><%= f.date_field :check_in %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :check_out ,"チェックアウト" %></th>
+      <td><%= f.date_field :check_out %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :people ,"人数" %></th>
+      <td><%= f.text_field :people %></td>
+    </tr>
+
+    <tr>
+      <th><%= f.label :total_price ,"合計金額" %></th>
+      <td><%= f.text_field :total_price %></td>
+    </tr>
+
+    <%= f.hidden_field :hotel_id, value: @hotel.id %>
+  </table>
+  <div>
+    <%= f.submit '確認画面へ' %>
+  </div>
+<% end %>
+
+
 <%= link_to 'Edit', edit_hotel_path(@hotel) %> 
 <%= link_to 'Back', hotels_path %>
+
+<%= current_user.email %> 

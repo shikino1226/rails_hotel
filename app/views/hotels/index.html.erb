@@ -28,6 +28,30 @@
   </tbody>
 </table>
 
+<h3>予約一覧</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>チェックイン</th>
+      <th>チェックアウト</th>
+      <th>人数</th>
+      <th>合計金額</th>
+      <th>ホテル名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reserves.each do |reserve| %>
+      <tr>
+        <td><%= reserve.check_in %></td>
+        <td><%= reserve.check_out %></td>
+        <td><%= reserve.people %></td>
+        <td><%= reserve.total_price %></td>
+        <td><%= reserve.hotel_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= search_form_for @q, url: search_hotels_path do |f| %>
   <%= f.label :name_or_introduction_or_address_cont, 'フリーワード検索' %>
