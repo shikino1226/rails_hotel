@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources :reserves
+  post 'reserves/new' => 'reserves#new'
 end

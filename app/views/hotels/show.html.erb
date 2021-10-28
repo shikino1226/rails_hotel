@@ -23,7 +23,7 @@
 
 <h3>予約登録</h3>
 
-<%= form_with model: @reserve do |f| %>
+<%= form_with url: new_reserf_path, method: :get, local: true do |f| %>
   <table>
     <tr>
       <th><%= f.label :check_in ,"チェックイン" %></th>
@@ -39,12 +39,7 @@
       <th><%= f.label :people ,"人数" %></th>
       <td><%= f.text_field :people %></td>
     </tr>
-
-    <tr>
-      <th><%= f.label :total_price ,"合計金額" %></th>
-      <td><%= f.text_field :total_price %></td>
-    </tr>
-
+    
     <%= f.hidden_field :hotel_id, value: @hotel.id %>
   </table>
   <div>

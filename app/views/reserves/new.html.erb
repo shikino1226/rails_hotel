@@ -1,2 +1,15 @@
-<h1>予約フォーム</h1>
-
+<h3>予約確認</h3>
+<table>
+  <thead>
+    <tr>
+      <th>チェックイン</th>
+      <th>チェックアウト</th>
+      <th>人数</th>
+      <th>合計金額</th>
+      <th>ホテル名</th>
+    </tr>
+  </thead>
+<%= @reserve.check_in %>
+<%= @reserve.check_out %>
+<%= @reserve.people %>
+</table>
