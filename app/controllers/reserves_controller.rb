@@ -2,7 +2,12 @@ class ReservesController < ApplicationController
 
   def new
     @reserve = Reserve.new(reserve_params)
-    @price = params[:price]
+    @people = params[:people].to_i
+    @price = params[:price].to_i
+    @check_out = params[:check_out].to_date
+    @check_in = params[:check_in].to_date
+    @total_day = (@check_out - @check_in).to_i
+    @total_price = @people * @price * @total_day
   end
 
   def create
