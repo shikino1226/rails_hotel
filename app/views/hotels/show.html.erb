@@ -39,8 +39,8 @@
       <th><%= f.label :people ,"人数" %></th>
       <td><%= f.text_field :people %></td>
     </tr>
-    
     <%= f.hidden_field :hotel_id, value: @hotel.id %>
+    <%= f.hidden_field :price, value: @hotel.price %>
   </table>
   <div>
     <%= f.submit '確認画面へ' %>

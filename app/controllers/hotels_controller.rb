@@ -18,9 +18,6 @@ class HotelsController < ApplicationController
     @hotel = Hotel.new
   end
 
-  def confirm
-  end
-
   # GET /hotels/1/edit
   def edit
   end

@@ -4,18 +4,19 @@
   <table>
     <tr>
      <p>チェックイン</p>
-     <%= f.label :check_in ,@reserve.check_in %>
+     <%= @reserve.check_in %>
     </tr>
     <tr>
      <p>チェックアウト</p>
-     <%= f.label :check_out ,@reserve.check_out %>
+     <%= @reserve.check_out %>
     </tr>
     <tr>
      <p>人数</p>
-     <%= f.label :people ,@reserve.people %>
+     <%= @reserve.people %>
     </tr>
     <tr>
      <p>合計金額</p>
+     <%= @price  %>
     </tr>
       <%= f.hidden_field :hotel_id, value: @reserve.hotel_id %>
       <%= f.hidden_field :check_in, value: @reserve.check_in %>
@@ -26,3 +27,4 @@
     <%= f.submit '予約する' %>
   </div>
 <% end %>
+

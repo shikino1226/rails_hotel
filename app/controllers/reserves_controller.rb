@@ -2,6 +2,7 @@ class ReservesController < ApplicationController
 
   def new
     @reserve = Reserve.new(reserve_params)
+    @price = params[:price]
   end
 
   def create
