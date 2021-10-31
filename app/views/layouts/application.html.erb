@@ -13,10 +13,22 @@
     <header>
       <nav>
         <% if user_signed_in? %>
-          <%= link_to "logout", destroy_user_session_path, method: :delete %>
+          
+          <%= current_user.name %> 
+          <div class="menu">
+              <label for="menu_bar01">メニュー</label>
+              <input type="checkbox" class="input_none"id="menu_bar01" />
+              <ul id="links01">
+                  <li><%= link_to 'ルーム登録', new_hotel_path %></li>
+                  <li><a href="">予約済みルーム一覧</a></li>
+                  <li><a href="">登録済みルーム一覧</a></li>
+                  <li><a href="">設定</a></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
+          </div>
         <% else %>
-          <%= link_to "sign up", new_user_registration_path %>
-          <%= link_to "login", new_user_session_path %>
+          <%= link_to "新規登録", new_user_registration_path %>
+          <%= link_to "ログイン", new_user_session_path %>
         <% end %>
       </nav>
     </header>
