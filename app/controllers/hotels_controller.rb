@@ -1,8 +1,12 @@
 class HotelsController < ApplicationController
   before_action :set_hotel, only: %i[ show edit update destroy ]
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q, only: [:home, :index, :search]
 
   # GET /hotels or /hotels.json
+  def home
+    
+  end
+
   def index
     @hotels = Hotel.all
     @reserves = Reserve.all
@@ -79,6 +83,6 @@ class HotelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hotel_params
-      params.require(:hotel).permit(:name, :introduction, :price, :address)
+      params.require(:hotel).permit(:name, :introduction, :price, :address, :picture)
     end
 end
