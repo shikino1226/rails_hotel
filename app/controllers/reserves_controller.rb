@@ -8,10 +8,12 @@ class ReservesController < ApplicationController
     @check_in = params[:check_in].to_date
     @total_day = (@check_out - @check_in).to_i
     @total_price = @people * @price * @total_day
+    # binding.pry
   end
 
   def create
-    @reserve = Reserve.new(params.require(:reserve).permit(:check_in, :check_out, :people, :total_price, :hotel_id))
+    @reserve = Reserve.new(params.require(:reserve).permit(:check_in, :check_out, :people, :total_price, :hotel_id, :user_id))
+    # binding.pry
     if @reserve.save
       flash[:notice] = "予約をしました"
       redirect_to :hotels

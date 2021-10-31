@@ -39,7 +39,8 @@
       <th>チェックアウト</th>
       <th>人数</th>
       <th>合計金額</th>
-      <th>ホテル名</th>
+      <th>ホテルID</th>
+      <th>ユーザーID</th>
     </tr>
   </thead>
   <tbody>
@@ -50,6 +51,7 @@
         <td><%= reserve.people %></td>
         <td><%= reserve.total_price %></td>
         <td><%= reserve.hotel_id %></td>
+        <td><%= reserve.user_id %></td>
         <td><%= link_to "参照", reserve %></td>
         <td><%= link_to "編集", [:edit, reserve] %></td>
         <td><%= link_to "削除", reserve, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>

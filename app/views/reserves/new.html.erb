@@ -23,6 +23,7 @@
       <%= f.hidden_field :check_out, value: @reserve.check_out %>
       <%= f.hidden_field :people, value: @reserve.people %>
       <%= f.hidden_field :total_price, value: @total_price %>
+      <%= f.hidden_field :user_id, value:current_user.id %>
   </table>
   <div>
     <%= f.submit '予約する' %>
