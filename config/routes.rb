@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :reserves
-  post 'reserves/new' => 'reserves#new'
+  resources :reservations
+  post 'reservations/new' => 'reservations#new'
 end

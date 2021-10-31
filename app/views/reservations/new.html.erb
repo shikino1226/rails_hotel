@@ -1,27 +1,27 @@
 <h3>予約確認</h3>
 
-<%= form_with model: @reserve do |f| %>
+<%= form_with model: @reservation do |f| %>
   <table>
     <tr>
      <p>チェックイン</p>
-     <%= @reserve.check_in %>
+     <%= @reservation.check_in %>
     </tr>
     <tr>
      <p>チェックアウト</p>
-     <%= @reserve.check_out %>
+     <%= @reservation.check_out %>
     </tr>
     <tr>
      <p>人数</p>
-     <%= @reserve.people %>
+     <%= @reservation.people %>
     </tr>
     <tr>
      <p>合計金額</p>
      <%= @total_price  %>
     </tr>
-      <%= f.hidden_field :hotel_id, value: @reserve.hotel_id %>
-      <%= f.hidden_field :check_in, value: @reserve.check_in %>
-      <%= f.hidden_field :check_out, value: @reserve.check_out %>
-      <%= f.hidden_field :people, value: @reserve.people %>
+      <%= f.hidden_field :hotel_id, value: @reservation.hotel_id %>
+      <%= f.hidden_field :check_in, value: @reservation.check_in %>
+      <%= f.hidden_field :check_out, value: @reservation.check_out %>
+      <%= f.hidden_field :people, value: @reservation.people %>
       <%= f.hidden_field :total_price, value: @total_price %>
       <%= f.hidden_field :user_id, value:current_user.id %>
   </table>

@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<img src="/assets/deault.jpg" alt="">
+
 <h1>ホテル一覧</h1>
 
 <table>
@@ -44,17 +46,17 @@
     </tr>
   </thead>
   <tbody>
-    <% @reserves.each do |reserve| %>
+    <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reserve.check_in %></td>
-        <td><%= reserve.check_out %></td>
-        <td><%= reserve.people %></td>
-        <td><%= reserve.total_price %></td>
-        <td><%= reserve.hotel_id %></td>
-        <td><%= reserve.user_id %></td>
-        <td><%= link_to "参照", reserve %></td>
-        <td><%= link_to "編集", [:edit, reserve] %></td>
-        <td><%= link_to "削除", reserve, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+        <td><%= reservation.check_in %></td>
+        <td><%= reservation.check_out %></td>
+        <td><%= reservation.people %></td>
+        <td><%= reservation.total_price %></td>
+        <td><%= reservation.hotel_id %></td>
+        <td><%= reservation.user_id %></td>
+        <td><%= link_to "参照", reservation %></td>
+        <td><%= link_to "編集", [:edit, reservation] %></td>
+        <td><%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
       </tr>
     <% end %>
   </tbody>

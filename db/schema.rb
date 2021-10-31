@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_10_31_041947) do
     t.integer "user_id"
   end
 
-  create_table "reserves", force: :cascade do |t|
+  create_table "reservations", force: :cascade do |t|
     t.string "check_in"
     t.string "check_out"
     t.string "people"

@@ -10,12 +10,13 @@ class HotelsController < ApplicationController
 
   def index
     @hotels = Hotel.all
-    @reserves = Reserve.all
+    @reservations = Reservation.all
   end
 
   # GET /hotels/1 or /hotels/1.json
   def show
-    @reserve = Reserve.new
+    @reservation = Reservation.new
+    # binding.pry
   end
 
   # GET /hotels/new
@@ -30,7 +31,7 @@ class HotelsController < ApplicationController
   # POST /hotels or /hotels.json
   def create
     @hotel = Hotel.new(hotel_params)
-
+# binding.pry
     respond_to do |format|
       if @hotel.save
         format.html { redirect_to :hotels, notice: "Hotel was successfully created." }

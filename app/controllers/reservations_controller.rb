@@ -1,7 +1,7 @@
-class ReservesController < ApplicationController
+class ReservationsController < ApplicationController
 
   def new
-    @reserve = Reserve.new(reserve_params)
+    @reservation = Reservation.new(reservation_params)
     @people = params[:people].to_i
     @price = params[:price].to_i
     @check_out = params[:check_out].to_date
@@ -12,9 +12,9 @@ class ReservesController < ApplicationController
   end
 
   def create
-    @reserve = Reserve.new(params.require(:reserve).permit(:check_in, :check_out, :people, :total_price, :hotel_id, :user_id))
+    @reservation = Reservation.new(params.require(:reservation).permit(:check_in, :check_out, :people, :total_price, :hotel_id, :user_id))
     # binding.pry
-    if @reserve.save
+    if @reservation.save
       flash[:notice] = "予約をしました"
       redirect_to :hotels
     else
@@ -32,15 +32,15 @@ class ReservesController < ApplicationController
   end
 
   def destroy
-    @reserve = Reserve.find(params[:id])
-    @reserve.destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
     flash[:notice] = "予約を削除しました"
     redirect_to :hotels
   end
 
   private
 
-  def reserve_params
+  def reservation_params
     params.permit(:check_in, :check_out, :people, :hotel_id, :user_id)
   end
 
