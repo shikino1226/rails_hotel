@@ -1,6 +1,7 @@
 class HotelsController < ApplicationController
   before_action :set_hotel, only: %i[ show edit update destroy ]
   before_action :set_q, only: [:home, :index, :search]
+  before_action :set_current_user
 
   # GET /hotels or /hotels.json
   def home
@@ -83,6 +84,11 @@ class HotelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def hotel_params
-      params.require(:hotel).permit(:name, :introduction, :price, :address, :picture)
+      params.require(:hotel).permit(:name, :introduction, :price, :address, :picture, :user_id)
     end
 end
+
+def set_current_user
+  @current_user = User.find_by(id: session[:user_id])
+end
+

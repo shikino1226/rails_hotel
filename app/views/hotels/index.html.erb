@@ -9,6 +9,7 @@
       <th>情報</th>
       <th>価格</th>
       <th>場所</th>
+      <th>登録者</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= hotel.introduction %></td>
         <td><%= hotel.price %></td>
         <td><%= hotel.address %></td>
+        <td><%= hotel.user_id %></td>
         <td><%= link_to '参照', hotel %></td>
         <td><%= link_to '編集', edit_hotel_path(hotel) %></td>
         <td><%= link_to '削除', hotel, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
@@ -48,6 +50,9 @@
         <td><%= reserve.people %></td>
         <td><%= reserve.total_price %></td>
         <td><%= reserve.hotel_id %></td>
+        <td><%= link_to "参照", reserve %></td>
+        <td><%= link_to "編集", [:edit, reserve] %></td>
+        <td><%= link_to "削除", reserve, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
       </tr>
     <% end %>
   </tbody>

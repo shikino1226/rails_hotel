@@ -30,12 +30,16 @@ class ReservesController < ApplicationController
   end
 
   def destroy
+    @reserve = Reserve.find(params[:id])
+    @reserve.destroy
+    flash[:notice] = "予約を削除しました"
+    redirect_to :hotels
   end
 
   private
 
   def reserve_params
-    params.permit(:check_in, :check_out, :people, :hotel_id)
+    params.permit(:check_in, :check_out, :people, :hotel_id, :user_id)
   end
 
 end
