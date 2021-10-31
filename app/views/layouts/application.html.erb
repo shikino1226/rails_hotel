@@ -4,16 +4,15 @@
     <title>RailsHotel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
+    <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" alt="">
       <nav>
-        <% if user_signed_in? %>
-          
+        <% if user_signed_in? %>         
           <%= current_user.name %> 
           <div class="menu">
               <label for="menu_bar01">メニュー</label>
