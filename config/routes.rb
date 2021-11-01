@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'home/index' => 'home#index'
   get 'home/index2' => 'home#index2'
+  get 'home/profile' => 'home#profile'
 
   resources :reservations
   post 'reservations/new' => 'reservations#new'

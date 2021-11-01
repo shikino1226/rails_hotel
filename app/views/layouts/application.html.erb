@@ -21,7 +21,7 @@
                   <li><%= link_to 'ルーム登録', new_hotel_path %></li>
                   <li><%= link_to '予約済みルーム一覧', home_index_path %></li>
                   <li><%= link_to '登録済みルーム一覧', home_index2_path %></li>
-                  <li><a href="">設定</a></li>
+                  <li><%= link_to '設定', home_profile_path %></li>
                   <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
               </ul>
           </div>
