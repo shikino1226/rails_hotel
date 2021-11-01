@@ -10,4 +10,7 @@ class HomeController < ApplicationController
     @hotel = Hotel.where(user_id:current_user.id)
   end
 
+  def profile
+  end
+
 end
