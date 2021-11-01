@@ -1,0 +1,35 @@
+<p>登録済みホテル</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>情報</th>
+      <th>価格</th>
+      <th>場所</th>
+      <th>登録者</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hotel.each do |hotel| %>
+      <% if hotel.picture? %>
+        <%= image_tag hotel.picture.url, :size => '300x300'%>
+      <% else %>
+        <%= image_tag "/assets/deault.jpg", :size => '100x100' %>
+      <% end %>
+      <tr>
+        <td><%= hotel.picture %></td>
+        <td><%= hotel.name %></td>
+        <td><%= hotel.introduction %></td>
+        <td><%= hotel.price %></td>
+        <td><%= hotel.address %></td>
+        <td><%= hotel.user_id %></td>
+        <td><%= link_to '参照', hotel %></td>
+        <td><%= link_to '編集', edit_hotel_path(hotel) %></td>
+        <td><%= link_to '削除', hotel, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

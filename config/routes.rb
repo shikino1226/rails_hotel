@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'home/index' => 'home#index'
+  get 'home/index2' => 'home#index2'
+
   resources :reservations
   post 'reservations/new' => 'reservations#new'
 end

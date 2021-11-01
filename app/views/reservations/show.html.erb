@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<% if @reservation.hotel.picture? %>
+  <%= image_tag @reservation.hotel.picture.url, :size => '300x300'%>
+<% else %>
+  <%= image_tag "/assets/deault.jpg", :size => '100x100' %>
+<% end %>
+<p>
+  <%= @reservation.hotel.picture %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reservation.hotel.name %>
+</p>
+
+<p>
+  <strong>Introduction:</strong>
+  <%= @reservation.hotel.introduction %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @reservation.hotel.price %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @reservation.hotel.address %>
+</p>
+
+<p>
+  <strong>チェックイン</strong>
+  <%= @reservation.check_in %>
+</p>
+
+<p>
+  <strong>チェックアウト</strong>
+  <%= @reservation.check_out %>
+</p>
+
+<p>
+  <strong>人数</strong>
+  <%= @reservation.people %>
+</p>
+
+<p>
+  <strong>合計金額</strong>
+  <%= @reservation.total_price %>
+</p>
+
