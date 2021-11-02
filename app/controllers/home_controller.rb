@@ -11,6 +11,11 @@ class HomeController < ApplicationController
   end
 
   def profile
+    @user = User.where(id:current_user.id)
+  end
+
+  def edit
+    @user = User.where(id:current_user.id)
   end
 
 end

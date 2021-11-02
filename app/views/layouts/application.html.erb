@@ -10,7 +10,8 @@
 
   <body>
     <header>
-    <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" alt="">
+      <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png") , root_path %>
+
       <nav>
         <% if user_signed_in? %>         
           <%= current_user.name %> 
