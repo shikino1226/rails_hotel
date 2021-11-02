@@ -1,3 +1,5 @@
+<p class="notice"><%= notice %></p> 
+
 <div class="container">
   <ul class="tab-list">
     <li class="tab box-active">アカウント</li>
@@ -13,7 +15,7 @@
     </div>
     <div class="tabbox">
 
-      <%= form_with url: user_registration_path do |f| %>
+      <%= form_with xmi: @user do |f| %>
         <button type="button" class="btn btn-outline-secondary rounded-pill">
           <%= f.file_field :avater, accept: 'image/jpeg,image/gif,image/png' %>
         </button>

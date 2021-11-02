@@ -6,8 +6,23 @@
   <%= f.submit '検索' %>
 <% end %>
 <%= link_to 'ホテル一覧', hotels_path %>
-<%= link_to "神奈川" , "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E7%A5%9E%E5%A5%88%E5%B7%9D&commit=%E6%A4%9C%E7%B4%A2" %>
-<%= link_to "東京" , "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E6%9D%B1%E4%BA%AC&commit=%E6%A4%9C%E7%B4%A2" %>
-<%= link_to "大阪" , "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E5%A4%A7%E9%98%AA&commit=%E6%A4%9C%E7%B4%A2" %>
-<%= link_to "北海道" , "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E5%8C%97%E6%B5%B7%E9%81%93&commit=%E6%A4%9C%E7%B4%A2" %>
 
+<%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E6%9D%B1%E4%BA%AC&commit=%E6%A4%9C%E7%B4%A2" do %>
+  <%= image_tag"/aseets/.jpg"%>
+  <p>東京</p>
+<% end %>
+
+<%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E5%A4%A7%E9%98%AA&commit=%E6%A4%9C%E7%B4%A2" do %>
+  <%= image_tag"/aseets/img_osaka.jpg"%>
+  <p>大阪</p>
+<% end %>
+
+<%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2" do %>
+  <%= image_tag"/aseets/img_kyoto.jpg"%>
+  <p>京都</p>
+<% end %>
+
+<%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E6%9C%AD%E5%B9%8C&commit=%E6%A4%9C%E7%B4%A2" do %>
+  <%= image_tag"/aseets/img_sapporo.jpg"%>
+  <p>札幌</p>
+<% end %>

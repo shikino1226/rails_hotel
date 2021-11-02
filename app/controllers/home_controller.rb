@@ -14,8 +14,12 @@ class HomeController < ApplicationController
     @user = User.where(id:current_user.id)
   end
 
-  def edit
-    @user = User.where(id:current_user.id)
+  def update
+     @user= User.new(params.permit(:name, :profile, :avater ))
+    if @user.save
+      flash[:notice] = "更新しました"
+      redirect_to action: :profile
+    end
   end
 
 end
