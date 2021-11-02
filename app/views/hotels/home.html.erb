@@ -1,11 +1,16 @@
-<img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg" alt="">
-<%= search_form_for @q, url: search_hotels_path do |f| %>
-  <%= f.label :name_or_introduction_or_address_cont, 'フリーワード検索' %>
-  <%= f.search_field :name_or_introduction_or_address_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
-<%= link_to 'ホテル一覧', hotels_path %>
+<img class = "top_img" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_cover_top.jpg" alt="">
+<div class = "seach_box">
+  <p class = "search_text">Potepan Shareでまだ体験したことのない旅をしよう</p>
+  <div class = "search_area">
+    <%= search_form_for @q, url: search_hotels_path do |f| %>
+      <%= f.label :name_or_introduction_or_address_cont, 'エリア' %><br>
+      <%= f.search_field :name_or_introduction_or_address_cont ,class: "search_field", placeholder: "東京"%>
+      <br>
+      <%= f.submit '探す', class: "search_button"%>
+    <% end %>
+  </div>
+</div>
+<%= link_to 'ホテル一覧', hotels_path %><br>
 
 <%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E6%9D%B1%E4%BA%AC&commit=%E6%A4%9C%E7%B4%A2" do %>
   <%= image_tag 'img_tokyo.jpg', :size => '300x300' %>

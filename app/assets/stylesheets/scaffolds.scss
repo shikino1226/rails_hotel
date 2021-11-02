@@ -63,3 +63,53 @@ div.actions {
 
 label {
   display: block; }
+
+.top_img{
+  position: relative;
+  width: 100%;
+}
+
+.seach_box{
+  position: absolute;
+  width: 700px;
+  height: 25%;
+  top: 25%;
+  left: 30%;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.search_text{
+  position: absolute;
+  top: 10%;
+  margin: 5px;
+  line-height:1.4em;
+  font-size: 30px;
+}
+
+.search_area{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+}
+
+.search_field{
+  position: absolute;
+  width: 660px;
+  height: 45px;
+  border: 3px solid;
+  border-color: skyblue;
+  border-radius: 5px;
+}
+
+.search_button{
+  position: absolute;
+  bottom: -80px;
+  background-color: skyblue;
+  width: 660px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  height: 45px;
+}
