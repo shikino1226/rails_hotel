@@ -12,6 +12,11 @@
 
   <tbody>
     <% @results.each do |hotel| %>
+      <% if hotel.picture? %>
+        <%= image_tag hotel.picture.url, :size => '300x300'%>
+      <% else %>
+        <%= image_tag "/assets/deault.jpg", :size => '100x100' %>
+      <% end %>
       <tr>
         <td><%= hotel.name %></td>
         <td><%= hotel.introduction %></td>

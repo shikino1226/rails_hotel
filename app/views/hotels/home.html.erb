@@ -12,22 +12,30 @@
 </div>
 <%= link_to 'ホテル一覧', hotels_path %><br>
 
-<%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E6%9D%B1%E4%BA%AC&commit=%E6%A4%9C%E7%B4%A2" do %>
-  <%= image_tag 'img_tokyo.jpg', :size => '300x300' %>
-  <p>東京</p>
-<% end %>
+<h2>おすすめのエリア</h2>
 
-<%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E5%A4%A7%E9%98%AA&commit=%E6%A4%9C%E7%B4%A2" do %>
-  <%= image_tag "img_osaka.jpg", :size => '300x300' %>
-  <p>大阪</p>
-<% end %>
-
-<%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2" do %>
-  <%= image_tag "img_kyoto.jpg", :size => '300x300' %>
-  <p>京都</p>
-<% end %>
-
-<%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E6%9C%AD%E5%B9%8C&commit=%E6%A4%9C%E7%B4%A2" do %>
-  <%= image_tag "img_sapporo.jpg", :size => '300x300' %>
-  <p>札幌</p>
-<% end %>
+<ul class = "recommendation">
+  <li>
+    <%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E6%9D%B1%E4%BA%AC&commit=%E6%A4%9C%E7%B4%A2" do %>
+    <%= image_tag 'img_tokyo.jpg', :size => '300x400' %>
+    <p class = "place">東京</p>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E5%A4%A7%E9%98%AA&commit=%E6%A4%9C%E7%B4%A2" do %>
+    <%= image_tag "img_osaka.jpg", :size => '300x400' %>
+    <p class = "place">大阪</p>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E4%BA%AC%E9%83%BD&commit=%E6%A4%9C%E7%B4%A2" do %>
+    <%= image_tag "img_kyoto.jpg", :size => '300x400' %>
+    <p class = "place">京都</p>
+  <% end %>
+  </li>
+    <%= link_to "http://localhost:3000/hotels/search?q%5Bname_or_introduction_or_address_cont%5D=%E6%9C%AD%E5%B9%8C&commit=%E6%A4%9C%E7%B4%A2" do %>
+    <%= image_tag "img_sapporo.jpg", :size => '300x400' %>
+    <p class = "place">札幌</p>
+    <% end %>
+  </li>
+</ul>

@@ -113,3 +113,18 @@ label {
   border: none;
   height: 45px;
 }
+
+.recommendation{
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.place{
+  position: relative;
+  bottom: 40px;
+  left: 40%;
+  font-size: 40px;
+  color: white;
+}
