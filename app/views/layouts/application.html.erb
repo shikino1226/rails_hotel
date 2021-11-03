@@ -10,22 +10,29 @@
 
   <body>
     <header>
-      <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png") , root_path %>
-
-      <nav>
-        <% if user_signed_in? %>         
-          <%= current_user.name %> 
-          <div class="menu">
-              <label for="menu_bar01">メニュー</label>
-              <input type="checkbox" class="input_none"id="menu_bar01" />
-              <ul id="links01">
-                  <li><%= link_to 'ルーム登録', new_hotel_path %></li>
-                  <li><%= link_to '予約済みルーム一覧', home_index_path %></li>
-                  <li><%= link_to '登録済みルーム一覧', home_index2_path %></li>
-                  <li><%= link_to '設定', home_profile_path %></li>
-                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-              </ul>
-          </div>
+      <div class = "header_img">
+        <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png") , root_path %>
+      </div>
+      <nav class = "nav">
+        <% if user_signed_in? %>
+          <ul class = "icon_flex">         
+            <li>
+              <%= current_user.name %>
+            </li> 
+            <li>
+              <div class="menu">
+                <label for="menu_bar01">メニュー</label>
+                <input type="checkbox" class="input_none"id="menu_bar01" />
+                <ul id="links01">
+                    <li><%= link_to 'ルーム登録', new_hotel_path %></li>
+                    <li><%= link_to '予約済みルーム一覧', home_index_path %></li>
+                    <li><%= link_to '登録済みルーム一覧', home_index2_path %></li>
+                    <li><%= link_to '設定', home_profile_path %></li>
+                    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         <% else %>
           <%= link_to "新規登録", new_user_registration_path %>
           <%= link_to "ログイン", new_user_session_path %>

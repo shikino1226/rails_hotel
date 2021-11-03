@@ -15,7 +15,7 @@
   <tbody>
     <% @hotel.each do |hotel| %>
       <% if hotel.picture? %>
-        <%= image_tag hotel.picture.url, :size => '300x300'%>
+        <%= image_tag hotel.picture.url, :size => '100x100'%>
       <% else %>
         <%= image_tag "/assets/deault.jpg", :size => '100x100' %>
       <% end %>

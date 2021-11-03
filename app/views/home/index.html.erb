@@ -11,24 +11,24 @@
   </thead>
   <tbody>
     <% @reservation.each do |reservation| %>
-      <% if reservation.hotel.picture? %>
-        <%= image_tag reservation.hotel.picture.url, :size => '300x300'%>
-      <% else %>
-        <%= image_tag "/assets/deault.jpg", :size => '100x100' %>
-      <% end %>
-      <tr>
-        <td><%= reservation.hotel.picture %></td>
-        <td><%= reservation.hotel.name %></td>
-        <td><%= reservation.hotel.introduction %></td>
-        <td><%= reservation.hotel.address %></td>
-        <td><%= reservation.check_in %></td>
-        <td><%= reservation.check_out %></td>
-        <td><%= reservation.people %></td>
-        <td><%= reservation.total_price %></td>
-        <td><%= link_to "参照", reservation %></td>
-        <td><%= link_to "編集", [:edit, reservation] %></td>
-        <td><%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
-      </tr>
+      <ul class = "reserved_rooms">     
+        <% if reservation.hotel.picture? %>
+          <%= image_tag reservation.hotel.picture.url, :size => '100x100'%>
+        <% else %>
+          <%= image_tag "/assets/deault.jpg", :size => '100x100' %>
+        <% end %>
+        <li><%= reservation.hotel.picture %></li>
+        <li><%= reservation.hotel.name %></li>
+        <li><%= reservation.hotel.introduction %></li>
+        <li><%= reservation.hotel.address %></li>
+        <li><%= reservation.check_in %></li>
+        <li><%= reservation.check_out %></li>
+        <li><%= reservation.people %></li>
+        <li><%= reservation.total_price %></li>
+        <li><%= link_to "参照", reservation %></li>
+        <li><%= link_to "編集", [:edit, reservation] %></li>
+        <li><%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></li>
+      </ul>
     <% end %>
   </tbody>
 </table>

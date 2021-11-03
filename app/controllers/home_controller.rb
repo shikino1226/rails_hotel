@@ -11,12 +11,14 @@ class HomeController < ApplicationController
   end
 
   def profile
-    @user = User.where(id:current_user.id)
+    @user = User.find_by(id: session[:user_id])  
+    # binding.pry
   end
 
   def update
-     @user= User.new(params.permit(:name, :profile, :avater ))
-    if @user.save
+    # binding.pry
+    @user= User.find(params[:id])
+    if @user.update(params.require(:user).permit(:name, :avater, :profile))
       flash[:notice] = "更新しました"
       redirect_to action: :profile
     end
