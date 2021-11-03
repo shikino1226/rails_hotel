@@ -64,6 +64,8 @@ div.actions {
 label {
   display: block; }
 
+// トップ画面
+
 .header_img{
   background-color: black;
   height: 100px;
@@ -93,7 +95,7 @@ label {
 .seach_box{
   position: absolute;
   width: 700px;
-  height: 25%;
+  height: 300px;
   top: 15%;
   left: 30%;
   font-size: 20px;
@@ -150,15 +152,95 @@ label {
   color: white;
 }
 
+// ユーザー予約一覧
+.reserved_item{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.reserved_item > li{
+  width: 200px;
+}
+
+.re_item1{
+  flex-basis: 230px;
+}
+
+.re_item2{
+  flex-basis: 20%;
+}
+
+.re_item3{
+  flex-basis: 15%;
+}
+
+.re_item4{
+  flex-basis: 15%;
+}
+
+.re_item5{
+  flex-basis: 10%;
+}
+
+.re_item6{
+  flex-basis: 10%;
+}
+
+.re_item7{
+  flex-basis: 10%;
+}
+
 .reserved_rooms{
   display: flex;
   width: 100%;
+  justify-content: space-around;
 }
 
 .reserved_rooms > li{
   border: 1px solid white;
   list-style: none;
   flex-grow: 1;
-  background: lightblue;
   box-sizing: border-box;
+  height: 200px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.rooms1{
+  flex-basis: 200px;
+}
+.rooms2{
+  flex-basis: 20%;
+  padding-top: 90px;
+}
+.rooms3{
+  flex-basis: 15%;
+  padding-top: 90px;
+}
+.rooms4{
+  flex-basis: 15%;
+  padding-top: 90px;
+}
+.rooms5{
+  flex-basis: 10%;
+  padding-top: 90px;
+}
+.rooms6{
+  flex-basis: 10%;
+  padding-top: 90px;
+}
+.rooms7{
+  flex-basis: 10%;
+  padding-top: 90px;
+}
+
+.reserved_area,.reserved_rooms:nth-child(odd){
+	background: #EEEEEE;
+}
+
+.l_rooms2{
+  text-decoration: none;
 }
