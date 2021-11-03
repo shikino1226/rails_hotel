@@ -1,35 +1,30 @@
-<p>登録済みホテル</p>
-
+<h1>登録済みルーム一覧</h1>
 <table>
   <thead>
-    <tr>
-      <th>名前</th>
-      <th>情報</th>
-      <th>価格</th>
-      <th>場所</th>
-      <th>登録者</th>
-      <th colspan="3"></th>
-    </tr>
+    <ul class = "hotels_item">
+      <li class = "ho_item1">ルーム画像</li>
+      <li class = "ho_item2">ルーム名</li>
+      <li class = "ho_item3">ルーム紹介</li>
+      <li class = "ho_item4">料金</li>
+      <li class = "ho_item5">作成日</li>
+    </ul>
   </thead>
 
-  <tbody>
+  <tbody class = "made_area">
     <% @hotel.each do |hotel| %>
-      <% if hotel.picture? %>
-        <%= image_tag hotel.picture.url, :size => '100x100'%>
-      <% else %>
-        <%= image_tag "/assets/deault.jpg", :size => '100x100' %>
-      <% end %>
-      <tr>
-        <td><%= hotel.picture %></td>
-        <td><%= hotel.name %></td>
-        <td><%= hotel.introduction %></td>
-        <td><%= hotel.price %></td>
-        <td><%= hotel.address %></td>
-        <td><%= hotel.user_id %></td>
-        <td><%= link_to '参照', hotel %></td>
-        <td><%= link_to '編集', edit_hotel_path(hotel) %></td>
-        <td><%= link_to '削除', hotel, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
-      </tr>
+      <ul class = "made_hotel">
+        <li class = "hotel1">
+            <% if hotel.picture? %>
+              <%= link_to image_tag(hotel.picture.url, :size => '330x200') ,hotel_path(hotel.id) %>
+            <% else %>
+              <%= link_to image_tag("/assets/deault.jpg", :size => '330x200') , hotel_path(hotel.id) %>
+            <% end %>
+        </li>
+        <li class = "hotel2"><%=link_to(hotel.name, hotel_path(hotel.id), {class: "l_rooms2"}) %></li>
+        <li class = "hotel3"><%= hotel.introduction %></li>
+        <li class = "hotel4"><%= hotel.price %></li>
+        <li class = "hotel5"><%= hotel.created_at %></li>
+      </ul>
     <% end %>
   </tbody>
 </table>
