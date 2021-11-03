@@ -1,33 +1,22 @@
 <h1>検索結果</h1>
-<table>
-  <thead>
-    <tr>
-      <th>ホテル名</th>
-      <th>情報</th>
-      <th>価格</th>
-      <th>場所</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @results.each do |hotel| %>
-      <% if hotel.picture? %>
-        <%= image_tag hotel.picture.url, :size => '300x300'%>
-      <% else %>
-        <%= image_tag "/assets/deault.jpg", :size => '100x100' %>
-      <% end %>
-      <tr>
-        <td><%= hotel.name %></td>
-        <td><%= hotel.introduction %></td>
-        <td><%= hotel.price %></td>
-        <td><%= hotel.address %></td>
-        <td><%= link_to '参照', hotel %></td>
-        <td><%= link_to '編集', edit_hotel_path(hotel) %></td>
-        <td><%= link_to '削除', hotel, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
-      </tr>
+<ul class = "room_area">
+  <% @results.each do |hotel| %>
+    <%= link_to hotel_path(hotel.id) do %>
+      <li class = "room_box_area">
+        <div>
+          <% if hotel.picture? %>
+            <%= image_tag hotel.picture.url, :size => '400x300'%>
+          <% else %>
+            <%= image_tag "/assets/deault.jpg", :size => '400x300' %>
+          <% end %>
+        </div>
+        <div><%= hotel.name %></div>
+        <div><%= hotel.address %></div>
+        <div>¥<%= hotel.price %></div>
+      </li>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+</ul>
 
 <%= link_to '一覧に戻る', hotels_path %>
