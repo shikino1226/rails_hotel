@@ -69,10 +69,6 @@ class HotelsController < ApplicationController
     @results = @q.result
   end
 
-  def search
-    @results = @q.result
-  end
-
   private
     def set_q
       @q = Hotel.ransack(params[:q])
