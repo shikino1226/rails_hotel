@@ -7,50 +7,48 @@
     <% else %>
       <%= image_tag "/assets/deault.jpg", :size => '600x400' %>
     <% end %>
-    <br><br>
-    <% if current_user.avatar? %>
-      <%= image_tag current_user.avatar.url, class: "icon_image"%>
-    <% else %>
-      <%= image_tag "/assets/deault.jpg", class: "icon_image"%>
-    <% end %>
-
+    <div class = "flex-item1_1">
+      <div>  
+        <% if current_user.avatar? %>
+          <%= image_tag current_user.avatar.url, class: "icon_image"%>
+        <% else %>
+          <%= image_tag "/assets/deault.jpg", class: "icon_image"%>
+        <% end %>
+      </div>
+      <div>
+        <p>
+          <div class = "name1"><%= @hotel.name %></div>
+        </p>
+        <p>
+          <div class ="address1"><%= @hotel.address %></div>
+        </p> 
+      </div>
+    </div>
     <p>
-      <div class = "name1"><%= @hotel.name %></div>
-    </p>
-
-    <p>
-      <strong>アピールポイント:</strong>
       <div class = "introduction1"><%= @hotel.introduction %></div>
     </p>
-
-    <p>
-      <strong>価格:</strong>
-      <div class ="price1"><%= @hotel.price %></div>
-    </p>
-
-    <p>
-      <strong>場所:</strong>
-      <div class ="address1"><%= @hotel.address %></div>
-    </p>
-    </div>
-    <div class = "flex-item2">
-    <h3>予約登録</h3>
-
+  </div>
+  <div class = "flex_item2">
+   <div class ="room_price">￥<%= @hotel.price %>/日</div>
     <%= form_with url: new_reservation_path, method: :get, local: true do |f| %>
       <table>
         <tr>
           <th><%= f.label :check_in ,"開始日" %></th>
-          <td><%= f.date_field :check_in %></td>
         </tr>
-
+        <tr>
+          <td><%= f.date_field :check_in, class: "date" %></td>
+        </tr>
         <tr>
           <th><%= f.label :check_out ,"終了日" %></th>
-          <td><%= f.date_field :check_out %></td>
         </tr>
-
+        <tr>
+        <td><%= f.date_field :check_out, class: "date" %></td>
+        </tr>
         <tr>
           <th><%= f.label :people ,"人数" %></th>
-          <td><%= f.text_field :people %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :people, class: "people_field" %></td>
         </tr>
         <%= f.hidden_field :hotel_id, value: @hotel.id %>
         <%= f.hidden_field :user_id, value:current_user.id  %>
