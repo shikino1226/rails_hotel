@@ -2,21 +2,21 @@
 
 <ul class = "room_area">
   <% @search_hotels.each do |hotel| %>
-    <%= link_to hotel_path(hotel.id) do %>
+    <%= link_to(hotel_path(hotel.id),class: "line_none") do  %>
       <li class = "room_box_area">
         <div>
           <% if hotel.picture? %>
-            <%= image_tag hotel.picture.url, :size => '400x300'%>
+            <%= image_tag hotel.picture.url, :size => '500x400'%>
           <% else %>
-            <%= image_tag "/assets/deault.jpg", :size => '400x300' %>
+            <%= image_tag "/assets/deault.jpg", :size => '500x400' %>
           <% end %>
         </div>
-        <div class = "line_none"><%= hotel.name %></div>
-        <div class = "line_none"><%= hotel.address %></div>
-        <div class = "line_none">¥<%= hotel.price %></div>
+        <div class = "room_item"><%= hotel.name %></div>
+        <div class = "room_item"><%= hotel.address %></div>
+        <div class = "room_item_1">¥<%= hotel.price %></div>
       </li>
     <% end %>
   <% end %>
 </ul>
 
-<%= link_to '一覧に戻る', hotels_path %>
+<%= link_to '戻る', root_path %>

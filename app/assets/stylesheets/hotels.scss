@@ -1,13 +1,29 @@
 .room_area{
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .room_box_area{
   width: 500px;
-  padding: 0.5em 1em;
-  margin: 2em 0;
+  height: 550px;
   color: #5d627b;
   background: white;
   border-top: solid 5px #5d627b;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  font-size: 30px;
+}
+.room_item{
+  padding: 10px;
+}
+.room_item_1{
+  padding: 10px;
+  position: relative;
+  right: -350px;
+}
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
 }

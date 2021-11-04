@@ -107,11 +107,12 @@ label {
   position: relative;
   top: -100px;
   width: 100%;
+  height: 500px;
 }
 
 .seach_box{
   position: absolute;
-  width: 700px;
+  width: 500px;
   height: 300px;
   top: 15%;
   left: 30%;
@@ -136,7 +137,7 @@ label {
 
 .search_field{
   position: absolute;
-  width: 660px;
+  width: 450px;
   height: 45px;
   border: 3px solid;
   border-color: skyblue;
@@ -147,7 +148,7 @@ label {
   position: absolute;
   bottom: -80px;
   background-color: skyblue;
-  width: 660px;
+  width: 450px;
   border-radius: 5px;
   color: white;
   border: none;
@@ -346,4 +347,17 @@ label {
 .hotel5{
   width: 30%;
   padding-top: 90px;
+}
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+  .header_search{
+    display: none;
+  }
+  .seach_box{
+    position: absolute;
+    left: 10%;
+  }
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
 }
