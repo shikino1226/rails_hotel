@@ -1,19 +1,22 @@
-<p class="notice"><%= notice %></p> 
-
 <div class="container">
   <ul class="tab-list">
     <li class="tab box-active">アカウント</li>
     <li class="tab">プロフィール</li>
   </ul>
   <div class="tabbox-contents">
-    <div class="tabbox box-show">
+    <div class="tabbox">
       <p>メールアドレス</p>
         <%= current_user.email %><br />
       <p>パスワード</p>
         <%= current_user.password %><br />
       <li><%= link_to '編集', edit_user_registration_path %></li>
     </div>
-    <div class="tabbox">
+    <div class="tabbox box-show">
+      <% if current_user.avatar? %>
+        <%= image_tag current_user.avatar.url, :size => '100x100'%>
+      <% else %>
+        <%= image_tag "/assets/deault.jpg", :size => '100x100' %>
+      <% end %>
       <%= form_with method: :post, url:home_profile_path do |f| %>
         <button type="button" class="btn btn-outline-secondary rounded-pill">
           <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %>
