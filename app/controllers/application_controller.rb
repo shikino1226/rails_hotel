@@ -1,20 +1,18 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller? 
-  before_action :set_q
   before_action :set_current_user
+  before_action :set_search
 
-  def search
-    @results = @q.result
+  def set_search
+    #@search = Article.search(params[:q])
+    @search = Hotel.ransack(params[:q]) #ransackメソッド推奨
+    @search_hotels = @search.result(distinct: true).order(created_at: "DESC").includes(:user)
   end
 
   private
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up,keys:[:email]) 
-    end
-
-    def set_q
-      @q = Hotel.ransack(params[:q])
     end
 
     def set_current_user

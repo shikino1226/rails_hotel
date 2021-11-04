@@ -1,7 +1,7 @@
 <h1>検索結果</h1>
 
 <ul class = "room_area">
-  <% @results.each do |hotel| %>
+  <% @search_hotels.each do |hotel| %>
     <%= link_to hotel_path(hotel.id) do %>
       <li class = "room_box_area">
         <div>

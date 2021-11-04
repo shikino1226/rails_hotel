@@ -2,7 +2,7 @@
 <div class = "seach_box">
   <p class = "search_text">Potepan Shareでまだ体験したことのない旅をしよう</p>
   <div class = "search_area">
-    <%= search_form_for @q, url: search_hotels_path do |f| %>
+    <%= search_form_for @search, url: search_hotels_path do |f| %>
       <%= f.label :name_or_introduction_or_address_cont, 'エリア' %><br>
       <%= f.search_field :name_or_introduction_or_address_cont ,class: "search_field", placeholder: "東京"%>
       <br>

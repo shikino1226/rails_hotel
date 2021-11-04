@@ -1,6 +1,5 @@
 class HotelsController < ApplicationController
   before_action :set_hotel, only: %i[ show edit update destroy ]
-  before_action :set_q, only: [:home, :index, :search]
   before_action :set_current_user
 
   # GET /hotels or /hotels.json
@@ -65,14 +64,7 @@ class HotelsController < ApplicationController
     end
   end
 
-  def search
-    @results = @q.result
-  end
-
   private
-    def set_q
-      @q = Hotel.ransack(params[:q])
-    end
     
     # Use callbacks to share common setup or constraints between actions.
     def set_hotel

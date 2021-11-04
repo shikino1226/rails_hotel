@@ -15,16 +15,16 @@
           <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png") , root_path %>
         </li>
         <li class = "header_search">
-          <%= search_form_for @q, url: search_hotels_path do |f| %>
+          <%= search_form_for @search, url: search_hotels_path do |f| %>
             <%= f.search_field :address_cont ,class: "header_search_field", placeholder: "エリア"%>
           <% end %>
         </li>
         <li class = "header_search">
-          <%= search_form_for @q, url: search_hotels_path do |f| %>
+          <%= search_form_for @search, url: search_hotels_path do |f| %>
             <%= f.search_field :name_or_introduction_or_address_cont ,class: "header_search_field", placeholder: "キーワード"%>
           <% end %>
         </li>
-      </li>
+      </ul>
       <nav class = "nav">
         <% if user_signed_in? %>
           <ul class = "icon_flex">         
