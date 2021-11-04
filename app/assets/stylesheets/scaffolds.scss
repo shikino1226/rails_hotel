@@ -105,6 +105,7 @@ label {
 
 .top_img{
   position: relative;
+  top: -100px;
   width: 100%;
 }
 
@@ -181,8 +182,8 @@ label {
 }
 
 .icon_image {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   //サイズ指定
   border-radius: 100px;
   //画像を丸くする
