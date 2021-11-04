@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     # binding.pry
     @user= User.find(params[:id])
     # binding.pry
-    if @user.update(params.permit(:name, :avater, :profile, :id))
+    if @user.update(params.permit(:name, :avatar, :profile, :id))
       flash[:notice] = "更新しました"
       redirect_to action: :profile
     end
