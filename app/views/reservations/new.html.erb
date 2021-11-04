@@ -1,22 +1,25 @@
-<h3>予約確認</h3>
+<h3>予約内容確認</h3>
 
 <%= form_with model: @reservation do |f| %>
-  <table>
+  <table class = "item1">
     <tr>
-     <p>チェックイン</p>
+     <strong>¥</strong><%= @total_price  %><strong>/ 日</strong>
+    </tr>
+    <tr>
+     <p class = "item1_1">開始日</p>
      <%= @reservation.check_in %>
     </tr>
     <tr>
-     <p>チェックアウト</p>
+     <p class = "item1_1">終了日</p>
      <%= @reservation.check_out %>
     </tr>
     <tr>
-     <p>人数</p>
-     <%= @reservation.people %>
+     <p class = "item1_1">人数</p>
+     <%= @reservation.people %><strong>名</strong>
     </tr>
     <tr>
-     <p>合計金額</p>
-     <%= @total_price  %>
+     <p class = "item1_1">合計金額</p>
+     <strong>¥</strong><%= @total_price  %>
     </tr>
       <%= f.hidden_field :hotel_id, value: @reservation.hotel_id %>
       <%= f.hidden_field :check_in, value: @reservation.check_in %>
@@ -26,7 +29,7 @@
       <%= f.hidden_field :user_id, value:current_user.id %>
   </table>
   <div>
-    <%= f.submit '予約する' %>
+    <%= f.submit '予約を確定' %>
   </div>
 <% end %>
 
