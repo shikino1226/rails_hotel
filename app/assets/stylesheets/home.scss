@@ -87,8 +87,24 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   display: block;
   text-align: left;
 }
+.user_item{
+  font-size: 20px;
+}
+.profile_edit{
+  display: block;
+  text-decoration: none;  
+  background-color: skyblue;
+  color: white;
+  font-size: 30px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  padding: 5px;
+}
 .account{
   border-bottom: 1px solid gray;
+  height: 50px;
+  font-size: 30px;
 }
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */

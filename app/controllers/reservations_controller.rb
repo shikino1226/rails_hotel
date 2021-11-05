@@ -1,5 +1,4 @@
 class ReservationsController < ApplicationController
-
   def new
     @reservation = Reservation.new(reservation_params)
     @people = params[:people].to_i

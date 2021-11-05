@@ -1,3 +1,4 @@
+<%= render "shared/error", obj: @user %>
 <div class="container">
   <ul class="tab-list">
     <li class="tab box-active">アカウント</li>
@@ -6,38 +7,37 @@
   <div class="tabbox-contents">
     <div class="tabbox box-show">
       <p class = "account">アカウント</p>
-      <p >メールアドレス</p>
-      <p class = "account"><%= current_user.email %></p><br />
-      <p>パスワード</p>
-      <p class = "account"><%= current_user.password %></p><br />
-      <li><%= link_to '編集', edit_user_registration_path %></li>
+      <p class = "account">メールアドレス:<%= current_user.email %></p><br />
+      <p class = "account">パスワード:<%= current_user.password %></p><br />
+      <%= link_to '編集', edit_user_registration_path , class:"profile_edit"%>
     </div>
 
     <div class="tabbox">
       <% if current_user.avatar? %>
-        <%= image_tag current_user.avatar.url, class: "icon_image" %>
+        <%= image_tag current_user.avatar.url, class: "icon_image icon_place" %>
       <% else %>
-        <%= image_tag "/assets/deault.jpg", class: "icon_image" %>
+        <%= image_tag "/assets/deault.jpg", class: "icon_image icon_place" %>
       <% end %>
-      <%= form_with method: :post, url:home_profile_path do |f| %>
-        <button type="button" class="btn btn-outline-secondary rounded-pill">
+      <%= form_with method: :post, url:home_profile_path, locale: true do |f| %>
+        <p class = "user_item1">アイコン画像</p>
+        <button type="button" class="btn btn-outline-secondary rounded-pill icon_field ">
           <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %>
         </button>
 
-        <div class="field">
-          <%= f.label :name %><br />
-          <%= f.text_field :name, autofocus: true, autocomplete: "name" ,value: current_user.name %>
+        <div class="field border_top">
+          <p class = "user_item2">名前</p>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" ,value: current_user.name, class: "profile_field" %>
         </div>
 
         <div class="field">
-          <%= f.label :profile %><br />
-          <%= f.text_area :profile, autofocus: true, autocomplete: "profile" ,value: current_user.profile %>
+          <p class = "user_item3">プロフィール</p>
+          <%= f.text_area :profile, autofocus: true, autocomplete: "profile" ,value: current_user.profile, class: "profile_field2" %>
         </div>
 
         <%= f.hidden_field :id, value:current_user.id %>
 
         <div class="actions">
-          <%= f.submit "更新する" %>
+          <%= f.submit "更新する" ,class:" plofile_submit" %>
         </div>
       <% end %>
     </div>

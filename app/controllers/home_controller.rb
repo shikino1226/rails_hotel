@@ -22,6 +22,8 @@ class HomeController < ApplicationController
     if @user.update(params.permit(:name, :avatar, :profile, :id))
       flash[:notice] = "更新しました"
       redirect_to action: :profile
+    else
+      render "profile"
     end
   end
 

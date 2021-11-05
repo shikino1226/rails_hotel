@@ -92,11 +92,16 @@
   color: white;
 }
 .reservation_button2{
+  display: block;
   text-decoration: none;
+  text-align: center;
   font-size: 30px;
-  background-color: #CCCC;
+  background-color: gray;
+  border-radius: 10px;
+  height: 50px;
   width: 500px;
-  color: red;
+  color: white;
+  padding: 10px;
 }
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */

@@ -49,6 +49,50 @@
 }
 .field2{
   padding: 50px;
+  margin: 20px;
+}
+.icon_field{
+  position: relative;
+  top: -20px;
+  padding: 100px;
+}
+.border_top{
+  border-top: 1px solid gray;
+  padding: 10px;
+}
+.user_item1{
+  position: relative;
+  left: 0%;
+  height: 50px;
+  font-size: 20px;
+}
+.user_item2{
+  font-size: 20px;
+}
+.user_item3{
+  position: relative;
+  left: -8%;
+  font-size: 20px;
+}
+.icon_place{
+  position: relative;
+  left: 40%;
+}
+.profile_field{
+  border-radius: 5px;
+}
+.profile_field2{
+  position: relative;
+  left: -50px;
+  border-radius: 5px;
+  height: 150px;
+}
+.plofile_submit{
+  height: 50px;
+  width: 850px;
+  border: none;
+  background-color: skyblue;
+  color: white;
 }
 .room_picture{
   padding: 30px;
