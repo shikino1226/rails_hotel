@@ -42,6 +42,62 @@
   font-size: 30px;
   padding: 10px;
 }
+//予約確認画面
+.item{
+  display: flex;
+  justify-content: center;
+}
+.item1{
+  text-align: left;
+  width: 600px;
+  height: 1200px;
+  border: 1px solid gray;
+  flex-direction: column;
+  font-size: 30px;
+  border-radius: 10px;
+}
+.item1_1{
+  padding: 40px;
+  font-size: 50px;
+}
+.item1_2{
+  font-size: 30px;
+  text-align: left;
+  padding: 40px;
+}
+.item1_3{
+  background-color: #CCCC;
+  width: 500px;
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.item1_4{
+  border-bottom: 1px solid gray;
+  font-size: 30px;
+  padding: 20px;
+}
+.item1_5{
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+  padding: 40px 20px;
+}
+.reservation_button1{
+  height: 50px;
+  width: 500px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: skyblue;
+  border: none;
+  color: white;
+}
+.reservation_button2{
+  text-decoration: none;
+  font-size: 30px;
+  background-color: #CCCC;
+  width: 500px;
+  color: red;
+}
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */
 }
