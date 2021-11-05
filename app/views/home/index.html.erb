@@ -23,7 +23,7 @@
         </li>
         <li class = "rooms2"><%=link_to(reservation.hotel.name, hotel_path(reservation.hotel.id), {class: "line_none"}) %></li>
         <li class = "rooms3"><%= reservation.hotel.introduction %></li>
-        <li class = "rooms4"><%= reservation.total_price %></li>
+        <li class = "rooms4">¥<%= reservation.total_price %></li>
         <li class = "rooms5"><%= reservation.check_in %></li>
         <li class = "rooms6"><%= reservation.check_out %></li>
         <li class = "rooms7"><%= reservation.created_at %></li>

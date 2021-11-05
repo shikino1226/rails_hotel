@@ -107,13 +107,13 @@ label {
   position: relative;
   top: -100px;
   width: 100%;
-  height: 500px;
+  height: 800px;
 }
 
 .seach_box{
   position: absolute;
   width: 500px;
-  height: 300px;
+  height: 400px;
   top: 15%;
   left: 30%;
   font-size: 20px;
@@ -137,7 +137,7 @@ label {
 
 .search_field{
   position: absolute;
-  width: 450px;
+  width: 750%;
   height: 45px;
   border: 3px solid;
   border-color: skyblue;
@@ -148,7 +148,7 @@ label {
   position: absolute;
   bottom: -80px;
   background-color: skyblue;
-  width: 450px;
+  width: 750%;
   border-radius: 5px;
   color: white;
   border: none;
@@ -360,4 +360,28 @@ label {
 }
 @media screen and (max-width: 480px) {
 	/* 480px以下に適用されるCSS（スマホ用） */
+  .nav{
+    position: relative;
+    top: -100px;
+    left: 50px;
+  }
+  .seach_box{
+    position: absolute;
+    width: 260px;
+    height: 400px;
+    top: 40%;
+    left: 10%;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  .header{
+    height: 200px;
+  }
+  .search_field{
+    width: 350%;
+  }
+  .search_button{
+    width: 350%;
+  }
 }

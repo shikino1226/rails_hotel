@@ -60,6 +60,8 @@
     <% end %>
   </div>
 </div>
-
-<%= link_to '編集', edit_hotel_path(@hotel) %> 
+<%if @hotel.user_id == current_user.id %>
+  <%= link_to '編集', edit_hotel_path(@hotel) %>
+  <%= link_to "このルーム情報を削除する", hotel_path, method: :delete, data: {confirm: "本当に削除しますか？" }%>
+<% end %>
 <%= link_to '戻る', hotels_path %>

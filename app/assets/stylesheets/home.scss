@@ -85,7 +85,10 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
 /* ↓このクラスがついている時だけタブの中身を表示↓ */
 .box-show {
   display: block;
-  text-align: center;
+  text-align: left;
+}
+.account{
+  border-bottom: 1px solid gray;
 }
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */
