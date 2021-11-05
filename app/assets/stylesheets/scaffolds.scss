@@ -192,6 +192,11 @@ label {
   //タテヨコ比を変えないままトリミング
 }
 
+.notice{
+  font-size: 25px;
+  color: #c00;
+}
+
 // ユーザー予約一覧
 .reserved_item{
   display: flex;
@@ -210,11 +215,11 @@ label {
 }
 
 .re_item2{
-  flex-basis: 20%;
+  flex-basis: 25%;
 }
 
 .re_item3{
-  flex-basis: 15%;
+  flex-basis: 10%;
 }
 
 .re_item4{
@@ -284,6 +289,11 @@ label {
   text-decoration: none;
   border: none;
 }
+.delete_reservation{
+  position: relative;
+  top: 80px;
+  width: 100px;
+}
 
 // ユーザー登録済みホテル
 .hotels_item{
@@ -348,6 +358,7 @@ label {
   width: 30%;
   padding-top: 90px;
 }
+
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */
   .header_search{

@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
     # binding.pry
     if @reservation.save
       flash[:notice] = "予約をしました"
-      redirect_to :hotels
+      redirect_to home_index_path
     else
       render "hotels"
     end
@@ -36,7 +36,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
     flash[:notice] = "予約を削除しました"
-    redirect_to :hotels
+    redirect_to home_index_path
   end
 
   private

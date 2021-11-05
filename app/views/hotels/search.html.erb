@@ -1,5 +1,5 @@
 <h1>検索結果</h1>
-
+<h2><%= @search_hotels_count %>件</h2>
 <ul class = "room_area">
   <% @search_hotels.each do |hotel| %>
     <%= link_to(hotel_path(hotel.id),class: "line_none") do  %>

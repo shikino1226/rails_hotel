@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     #@search = Article.search(params[:q])
     @search = Hotel.ransack(params[:q]) #ransackメソッド推奨
     @search_hotels = @search.result(distinct: true).order(created_at: "DESC").includes(:user)
+    @search_hotels_count = @search.result(distinct: true).count
   end
 
   private
