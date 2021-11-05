@@ -4,8 +4,8 @@
           user: ユーザー
         attributes:
           hotel:
-            name: ホテル名
-            introduction: 情報
-            price: 価格
-            address: 場所
+            name: ルーム名
+            introduction: ルーム紹介
+            price: 料金
+            address: 住所
             

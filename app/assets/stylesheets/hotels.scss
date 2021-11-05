@@ -21,6 +21,54 @@
   right: -350px;
 }
 
+// ルーム新規登録
+.new_room_area{
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  height: 900px;
+  border: 1px solid gray;
+  font-size: 20px;
+}
+.room_field{
+  position: absolute;
+  right: 10%;
+  width: 60%;
+  height: 40px;
+}
+.new_room_title{
+  font-size: 30px;
+}
+.field{
+  padding: 50px;
+  border-bottom: 1px solid gray;
+}
+.field1{
+  height: 100px;
+  padding: 50px 50px 150px 50px;
+}
+.field2{
+  padding: 50px;
+}
+.room_picture{
+  padding: 30px;
+  font-size: 20px;
+  border-bottom: 1px solid gray;
+}
+.new_picture{
+  position: absolute;
+  right: 20%;
+  bottom: 140px;
+}
+.room_new_button{
+  background-color: skyblue;
+  font-size: 30px;
+  border-radius: 5px;
+  border: none; 
+  color: white;
+  height: 80px;
+  width: 150px;
+}
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */
 }

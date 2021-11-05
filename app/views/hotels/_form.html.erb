@@ -9,34 +9,42 @@
       </ul>
     </div>
   <% end %>
+  <ul class = "new_room_area">
+    <li class ="field">
+      <p class = "new_room_title">ルーム情報登録</p>
+    </li>
 
-  <button type="button" class="btn btn-outline-secondary rounded-pill">
-    <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-  </button>
+    <li class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class:"room_field" %>
+    </li >
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <li class="field field1">
+      <%= form.label :introduction %>
+      <%= form.text_area :introduction, class:"room_field field2" %>
+    </li >
 
-  <div class="field">
-    <%= form.label :introduction %>
-    <%= form.text_field :introduction %>
-  </div>
+    <li class="field">
+      <%= form.label :price %>
+      <%= form.number_field :price, class:"room_field" %>
+    </li >
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
+    <li class="field">
+      <%= form.label :address %>
+      <%= form.text_field :address, class:"room_field" %>
+    </li >
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+    <li>
+      <p class = "room_picture">ルーム画像</p>
+      <button type="button" class="btn btn-outline-secondary rounded-pill new_picture">
+        <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+      </button>
+    </li>
 
-  <%= form.hidden_field :user_id, value:current_user.id %>
+    <li>
+      <%= form.submit class:"actions room_new_button"%>
+    </li>
+  </ul>
+    <%= form.hidden_field :user_id, value:current_user.id %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
