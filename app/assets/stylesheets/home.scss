@@ -108,20 +108,60 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   font-size: 30px;
 }
 // 新規アカウント
+.Mandatory{
+  height: 40px;
+  width: 80px;
+  background-color: red;
+  border-radius: 7px;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+.new_account_back{
+  border: 1px solid gray;
+  width: 500px;
+  height: 600px;
+  text-align: center;
+}
 .new_account_field{
   background-color: white;
 }
 .new_account_field1{
   height: 60px;
   font-size: 20px;
+  border-radius: 5px;
+}
+.account_submit{
+  height: 50px;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: skyblue;
+  border: none;
+  color: white;
+  position: relative;
+  top: 10px;
 }
 // ログインアカウント
+.login_account_back{
+  border: 1px solid gray;
+  width: 500px;
+  height: 600px;
+  text-align: center;
+}
 .login_account_field{
   background-color: white;
 }
 .login_account_field1{
   height: 60px;
   font-size: 20px;
+  border-radius: 5px;
+}
+.link_new{
+  text-decoration: none;
+  font-size: 20px;
+  color: blue!important;
 }
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */

@@ -31,19 +31,19 @@
     <%= form_with url: new_reservation_path, method: :get, local: true do |f| %>
       <table>
         <tr>
-          <th><%= f.label :check_in ,"開始日" %></th>
+          <th><%= f.label :check_in ,"開始日（必須）" %></th>
         </tr>
         <tr>
           <td><%= f.date_field :check_in, class: "date" %></td>
         </tr>
         <tr>
-          <th><%= f.label :check_out ,"終了日" %></th>
+          <th><%= f.label :check_out ,"終了日（必須）" %></th>
         </tr>
         <tr>
         <td><%= f.date_field :check_out, class: "date" %></td>
         </tr>
         <tr>
-          <th><%= f.label :people ,"人数" %></th>
+          <th><%= f.label :people ,"人数（必須）" %></th>
         </tr>
         <tr>
           <td><%= f.text_field :people, class: "people_field" %></td>
