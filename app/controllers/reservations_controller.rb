@@ -49,6 +49,17 @@ class ReservationsController < ApplicationController
     if @reservation.check_in == "" || @reservation.check_out == "" || @reservation.people == ""
       redirect_to hotel_path(@reservation.hotel_id)
       flash[:notice] = "必須項目を入力してください"
+    elsif
+      @check_out = params[:check_out].to_date
+      @check_in = params[:check_in].to_date
+      @total_day = (@check_out - @check_in).to_i
+      if @total_day < 0
+        redirect_to hotel_path(@reservation.hotel_id)
+        flash[:notice] = "終了日は開始日以降にしてください"
+      elsif @reservation.people.to_i < 0
+        redirect_to hotel_path(@reservation.hotel_id)
+        flash[:notice] = "人数は１人以上にしてください"
+      end
     end
   end
 end
