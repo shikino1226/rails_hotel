@@ -128,7 +128,26 @@ label {
   line-height:1.4em;
   font-size: 30px;
 }
-
+.logout{
+  display: block;
+  position: absolute;
+  text-decoration: none;
+  color: white!important;
+  font-size: 30px;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+}
+.new_user{
+  top: 5px;
+  right: 200px;
+  background-color: skyblue;
+}
+.login_user{
+  top: 5px;
+  right: 5px;
+  background-color: #CCCC;
+}
 .search_area{
   position: absolute;
   top: 50%;

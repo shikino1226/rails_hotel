@@ -47,8 +47,8 @@
             </li>
           </ul>
         <% else %>
-          <%= link_to "新規登録", new_user_registration_path %>
-          <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to "新規登録", new_user_registration_path, class: "logout new_user" %>
+          <%= link_to "ログイン", new_user_session_path, class: "logout login_user" %>
         <% end %>
       </nav>
     </header>

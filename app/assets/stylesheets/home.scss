@@ -94,17 +94,25 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   display: block;
   text-decoration: none;  
   background-color: skyblue;
-  color: white;
+  color: white!important;
   font-size: 30px;
-  width: 200px;
+  width: 300px;
   height: 50px;
   text-align: center;
   padding: 5px;
+  border-radius: 5px;
 }
 .account{
   border-bottom: 1px solid gray;
   height: 50px;
   font-size: 30px;
+}
+// 新規アカウント
+.new_account_field{
+  background-color: white;
+}
+.new_account_field1{
+
 }
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */

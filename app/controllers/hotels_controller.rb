@@ -15,7 +15,8 @@ class HotelsController < ApplicationController
   # GET /hotels/1 or /hotels/1.json
   def show
     @reservation = Reservation.new
-    # binding.pry
+    @hotel_user_id = @hotel.user_id
+    @user_avatar = User.find(@hotel_user_id)
   end
 
   # GET /hotels/new

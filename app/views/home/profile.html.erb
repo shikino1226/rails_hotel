@@ -1,4 +1,10 @@
-<%= render "shared/error", obj: @user %>
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |message| %>
+    <ul>
+      <li><%= message %></li>
+    </ul>
+  <% end %>
+<% end %>
 <div class="container">
   <ul class="tab-list">
     <li class="tab box-active">アカウント</li>
@@ -8,7 +14,7 @@
     <div class="tabbox box-show">
       <p class = "account">アカウント</p>
       <p class = "account">メールアドレス:<%= current_user.email %></p><br />
-      <p class = "account">パスワード:<%= current_user.password %></p><br />
+      <p class = "account">パスワード:********</p><br />
       <%= link_to '編集', edit_user_registration_path , class:"profile_edit"%>
     </div>
 
@@ -30,7 +36,7 @@
         </div>
 
         <div class="field">
-          <p class = "user_item3">プロフィール</p>
+          <p class = "user_item3">自己紹介</p>
           <%= f.text_area :profile, autofocus: true, autocomplete: "profile" ,value: current_user.profile, class: "profile_field2" %>
         </div>
 

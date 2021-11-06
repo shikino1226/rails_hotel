@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_action :check, only: %i[ new ]
   def new
     @reservation = Reservation.new(reservation_params)
     @people = params[:people].to_i
@@ -43,5 +44,11 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.permit(:check_in, :check_out, :people, :hotel_id, :user_id)
   end
-
+  def check
+    @reservation = Reservation.new(reservation_params)
+    if @reservation.check_in == "" || @reservation.check_out == "" || @reservation.people == ""
+      redirect_to hotel_path(@reservation.hotel_id)
+      flash[:notice] = "必須項目を入力してください"
+    end
+  end
 end
