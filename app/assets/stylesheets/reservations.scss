@@ -100,7 +100,18 @@
   border-radius: 10px;
   height: 50px;
   width: 500px;
-  color: white;
+  color: white!important;
+  padding: 10px;
+}
+.link_to_login{
+  display: block;
+  text-decoration: none;
+  height: 50px;
+  width: 220px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: skyblue;
+  color: white!important;
   padding: 10px;
 }
 @media screen and (max-width: 959px) {

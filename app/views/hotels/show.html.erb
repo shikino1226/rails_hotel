@@ -49,17 +49,25 @@
           <td><%= f.text_field :people, class: "people_field" %></td>
         </tr>
         <%= f.hidden_field :hotel_id, value: @hotel.id %>
-        <%= f.hidden_field :user_id, value:current_user.id  %>
         <%= f.hidden_field :price, value: @hotel.price %>
+        <%if user_signed_in? %>
+          <%= f.hidden_field :user_id, value:current_user.id  %>
+        <% end %>
       </table>
       <div>
+        <%if user_signed_in? %>
         <%= f.submit '予約する' %>
+        <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: "link_to_login" %>
+        <%end%>
       </div>
     <% end %>
   </div>
 </div>
-<%if @hotel.user_id == current_user.id %>
-  <%= link_to '編集', edit_hotel_path(@hotel) %>
-  <%= link_to "このルーム情報を削除する", hotel_path, method: :delete, data: {confirm: "本当に削除しますか？" }%>
+<%if user_signed_in? %>
+  <%if @hotel.user_id == current_user.id %>
+    <%= link_to '編集', edit_hotel_path(@hotel) %>
+    <%= link_to "このルーム情報を削除する", hotel_path, method: :delete, data: {confirm: "本当に削除しますか？" }%>
+  <% end %>
 <% end %>
 <%= link_to '戻る', :back %>

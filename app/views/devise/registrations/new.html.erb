@@ -3,24 +3,24 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "new_account_field"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field new_account_field1">
+    <div class="field">
     <p>必須</p>
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前" , class: "new_account_field1"%>
   </div>
   
-  <div class="field new_account_field1">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "new_account_field1" %>
   </div>
 
-  <div class="field new_account_field1">
+  <div class="field">
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上で入力)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "new_account_field1" %>
   </div>
 
-  <div class="field new_account_field1">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワード" %>
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワード", class: "new_account_field1" %>
   </div>
 
   <div class="actions">
