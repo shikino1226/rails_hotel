@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new(params.require(:reservation).permit(:check_in, :check_out, :people, :total_price, :hotel_id, :user_id))
+    @reservation = Reservation.new(reservation_require_params)
     # binding.pry
     if @reservation.save
       flash[:notice] = "予約をしました"
@@ -20,16 +20,6 @@ class ReservationsController < ApplicationController
     else
       render "hotels"
     end
-  end
-
-  def show
-    @reservation = Reservation.find(params[:id])
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def destroy
@@ -43,6 +33,9 @@ class ReservationsController < ApplicationController
 
   def reservation_params
     params.permit(:check_in, :check_out, :people, :hotel_id, :user_id)
+  end
+  def reservation_require_params
+    params.require(:reservation).permit(:check_in, :check_out, :people, :total_price, :hotel_id, :user_id)
   end
   def check
     @reservation = Reservation.new(reservation_params)

@@ -29,22 +29,16 @@
         <button type="button" class="btn btn-outline-secondary rounded-pill icon_field ">
           <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %>
         </button>
-
         <div class="field border_top">
           <p class = "user_item2">名前</p>
           <%= f.text_field :name, autofocus: true, autocomplete: "name" ,value: current_user.name, class: "profile_field" %>
         </div>
-
         <div class="field">
           <p class = "user_item3">自己紹介</p>
           <%= f.text_area :profile, autofocus: true, autocomplete: "profile" ,value: current_user.profile, class: "profile_field2" %>
         </div>
-
         <%= f.hidden_field :id, value:current_user.id %>
-
-        <div class="actions">
-          <%= f.submit "更新する" ,class:" plofile_submit" %>
-        </div>
+        <div class="actions"><%= f.submit "更新する" ,class:" plofile_submit" %></div>
       <% end %>
     </div>
   </div>

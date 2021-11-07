@@ -1,34 +1,29 @@
 <h1>予約済みルーム一覧</h1>
 <table>
   <thead>
-    <ul class = "reserved_item">
-      <li class = "re_item1">ルーム画像</li>
-      <li class = "re_item2">ルーム名</li>
-      <li class = "re_item3">ルーム紹介</li>
-      <li class = "re_item4">合計料金</li>
-      <li class = "re_item5">開始日</li>
-      <li class = "re_item6">終了日</li>
-      <li class = "re_item7">予約確定日時</li>
-    </ul>
+    <ul class = "reserved_item"><li class = "re_item1">ルーム画像</li>
+    <li class = "re_item2">ルーム名</li>
+    <li class = "re_item3">ルーム紹介</li>
+    <li class = "re_item4">合計料金</li>
+    <li class = "re_item5">開始日</li>
+    <li class = "re_item6">終了日</li>
+    <li class = "re_item7">予約確定日時</li></ul>
   </thead>
   <tbody class = "reserved_area">
     <% @reservation.each do |reservation| %>
-      <ul class = "reserved_rooms">     
-        <li class = "rooms1">
-            <% if reservation.hotel.picture? %>
-              <%= link_to image_tag(reservation.hotel.picture.url, :size => '230x200') ,hotel_path(reservation.hotel.id) %>
-            <% else %>
-              <%= link_to image_tag("/assets/deault.jpg", :size => '230x200') , hotel_path(reservation.hotel.id) %>
-            <% end %>
-        </li>
-        <li class = "delete_reservation"><%= link_to "この予約を削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></li>
-        <li class = "rooms2"><%=link_to(reservation.hotel.name, hotel_path(reservation.hotel.id), {class: "line_none"}) %></li>
-        <li class = "rooms3"><%= reservation.hotel.introduction %></li>
-        <li class = "rooms4">¥<%= reservation.total_price %></li>
-        <li class = "rooms5"><%= reservation.check_in %></li>
-        <li class = "rooms6"><%= reservation.check_out %></li>
-        <li class = "rooms7"><%= reservation.created_at %></li>
-      </ul>
+      <ul class = "reserved_rooms"><li class = "rooms1">
+      <% if reservation.hotel.picture? %>
+        <%= link_to image_tag(reservation.hotel.picture.url, :size => '230x200') ,hotel_path(reservation.hotel.id) %>
+      <% else %>
+        <%= link_to image_tag("/assets/deault.jpg", :size => '230x200') , hotel_path(reservation.hotel.id) %>
+      <% end %></li>
+      <li class = "delete_reservation"><%= link_to "この予約を削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %></li>
+      <li class = "rooms2"><%=link_to(reservation.hotel.name, hotel_path(reservation.hotel.id), {class: "line_none"}) %></li>
+      <li class = "rooms3"><%= reservation.hotel.introduction %></li>
+      <li class = "rooms4">¥<%= reservation.total_price %></li>
+      <li class = "rooms5"><%= reservation.check_in %></li>
+      <li class = "rooms6"><%= reservation.check_out %></li>
+      <li class = "rooms7"><%= reservation.created_at %></li></ul>
     <% end %>
   </tbody>
 </table>
