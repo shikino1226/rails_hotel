@@ -1,14 +1,4 @@
 <%= form_with(model: hotel, local: true) do |form| %>
-  <% if hotel..any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
-      <ul>
-        <% hotel.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
   <ul class = "new_room_area">
     <li class ="field">
       <p class = "new_room_title">ルーム情報登録</p>
@@ -46,5 +36,4 @@
     </li>
   </ul>
     <%= form.hidden_field :user_id, value:current_user.id %>
-
 <% end %>

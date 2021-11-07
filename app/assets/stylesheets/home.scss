@@ -108,6 +108,7 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   font-size: 30px;
 }
 // 新規アカウント
+
 .Mandatory{
   height: 40px;
   width: 80px;
@@ -123,6 +124,8 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   width: 500px;
   height: 600px;
   text-align: center;
+  position: relative;
+  left: 40%;
 }
 .new_account_field{
   background-color: white;
@@ -144,7 +147,16 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   top: 10px;
 }
 // ログインアカウント
+.login_page{
+  width: auto;
+}
+.account_title{
+  position: relative;
+  left: 40%;
+}
 .login_account_back{
+  position: relative;
+  left: 40%;
   border: 1px solid gray;
   width: 500px;
   height: 600px;

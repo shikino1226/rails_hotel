@@ -4,7 +4,6 @@ class HotelsController < ApplicationController
 
   # GET /hotels or /hotels.json
   def home
-    
   end
 
   def index
@@ -81,4 +80,3 @@ end
 def set_current_user
   @current_user = User.find_by(id: session[:user_id])
 end
-
