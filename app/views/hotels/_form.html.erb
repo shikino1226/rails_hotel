@@ -5,30 +5,30 @@
     </li>
 
     <li class="field">
-      <%= form.label :name %>
+      <%= form.label :name, class:"labels" %>
       <%= form.text_field :name, class:"room_field" %>
     </li >
 
     <li class="field field1">
-      <%= form.label :introduction %>
+      <%= form.label :introduction, class:"labels" %>
       <%= form.text_area :introduction, class:"room_field field2" %>
     </li >
 
     <li class="field">
-      <%= form.label :price %>
+      <%= form.label :price, class:"labels" %>
       <%= form.number_field :price, class:"room_field" %>
     </li >
 
     <li class="field">
-      <%= form.label :address %>
+      <%= form.label :address, class:"labels" %>
       <%= form.text_field :address, class:"room_field" %>
     </li >
 
     <li>
       <p class = "room_picture">ルーム画像</p>
-      <button type="button" class="btn btn-outline-secondary rounded-pill new_picture">
+      <span class ="room_picture_choice"><button type="button" class="btn btn-outline-secondary rounded-pill new_picture">
         <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-      </button>
+      </button></span>
     </li>
 
     <li>

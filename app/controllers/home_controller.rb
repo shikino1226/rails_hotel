@@ -11,13 +11,13 @@ class HomeController < ApplicationController
   end
 
   def profile
-    @user = User.find_by_id(current_user.id)
+    @user = User.find(current_user.id)
     # binding.pry
   end
 
   def update
     # binding.pry
-    @user= User.find(params[:id])
+    @user = User.find(current_user.id)
     # binding.pry
     if @user.update(params.permit(:name, :avatar, :profile, :id))
       flash[:notice] = "更新しました"

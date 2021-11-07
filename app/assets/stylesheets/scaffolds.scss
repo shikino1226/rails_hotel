@@ -273,7 +273,7 @@ label {
 }
 
 .rooms1{
-  flex-basis: 200px;
+  flex-basis: 20%;
 }
 .rooms2{
   flex-basis: 20%;
@@ -413,5 +413,8 @@ label {
   }
   .search_button{
     width: 350%;
+  }
+  .hotel1{
+    display: none;
   }
 }

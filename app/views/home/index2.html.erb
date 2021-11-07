@@ -15,9 +15,9 @@
       <ul class = "made_hotel">
         <li class = "hotel1">
             <% if hotel.picture? %>
-              <%= link_to image_tag(hotel.picture.url, :size => '330x200') ,hotel_path(hotel.id) %>
+              <%= link_to image_tag(hotel.picture.url, :size => '230x200') ,hotel_path(hotel.id) %>
             <% else %>
-              <%= link_to image_tag("/assets/deault.jpg", :size => '330x200') , hotel_path(hotel.id) %>
+              <%= link_to image_tag("/assets/deault.jpg", :size => '230x200') , hotel_path(hotel.id) %>
             <% end %>
         </li>
         <li class = "hotel2"><%=link_to(hotel.name, hotel_path(hotel.id), {class: "line_none"}) %></li>

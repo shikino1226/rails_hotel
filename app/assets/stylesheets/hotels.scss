@@ -116,7 +116,54 @@
 
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */
+  .plofile_submit{
+    width: 600px;
+  }
+  .new_picture{
+    left: 200px;
+  }
 }
 @media screen and (max-width: 480px) {
 	/* 480px以下に適用されるCSS（スマホ用） */
+  .plofile_submit{
+    width: 300px;
+  }
+  .field{
+    position: relative;
+    top:0px
+  }
+  .labels{
+    position: relative;
+    top: -40px;
+  }
+  .new_room_title{
+    font-size: 20px;
+  }
+  .room_picture{
+    padding-bottom: 100px;
+  }
+  .room_picture_choice{
+    position: relative;
+    top: 80px;
+    left: -200px;
+    border: 1px solid black;
+  }
+  .new_picture{
+    width: 300px;
+  }
+  .new_room_area{
+    width: 100%;
+  }
+  .room_new_button{
+    position: relative;
+    top: -30px;
+    left: 60px;
+    background-color: skyblue;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none; 
+    color: white;
+    height: 50px;
+    width: 100px;
+  }
 }

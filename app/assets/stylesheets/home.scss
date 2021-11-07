@@ -180,4 +180,7 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
 }
 @media screen and (max-width: 480px) {
 	/* 480px以下に適用されるCSS（スマホ用） */
+  .account{
+    font-size: 15px;
+  }
 }
