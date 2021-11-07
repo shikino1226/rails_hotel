@@ -6,11 +6,6 @@ class HotelsController < ApplicationController
   def home
   end
 
-  def index
-    @hotels = Hotel.all
-    @reservations = Reservation.all
-  end
-
   # GET /hotels/1 or /hotels/1.json
   def show
     @reservation = Reservation.new
