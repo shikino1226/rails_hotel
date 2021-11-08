@@ -175,12 +175,61 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   font-size: 20px;
   color: blue!important;
 }
+// アカウント編集
+.edit_account_field1{
+  height: 100px;
+  font-size: 20px;
+}
+.edit_account_field2{
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.edit_back{
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 10px 180px;
+  border-radius: 5px;
+  text-align: center;
+}
+.new_account_back{
+  height: 600px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */
+  .new_account_back{
+    position: relative;
+    left: 150px;
+  }
 }
 @media screen and (max-width: 480px) {
 	/* 480px以下に適用されるCSS（スマホ用） */
   .account{
     font-size: 15px;
+  }
+  .new_account_back{
+    left: 0px;
+    width: auto;
+    height: 700px;
+  }
+  .edit_account_field1{
+    height: 130px;
+  }
+  .edit_back{
+    padding: 10px 50px;
+  }
+  .account_submit{
+    width: 150px;
+  }
+  .login_page{
+    position: relative;
+    left: -120px;
+    width: auto;
+  }
+  .login_account_back{
+    width: auto;
   }
 }
