@@ -42,7 +42,7 @@ class ReservationsController < ApplicationController
     if @reservation.check_in == "" || @reservation.check_out == "" || @reservation.people == ""
       redirect_to hotel_path(@reservation.hotel_id)
       flash[:notice] = "必須項目を入力してください"
-    elsif
+    else
       @check_out = params[:check_out].to_date
       @check_in = params[:check_in].to_date
       @total_day = (@check_out - @check_in).to_i
