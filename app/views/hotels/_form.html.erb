@@ -1,0 +1,12 @@
+<%= form_with(model: hotel, local: true) do |form| %>
+  <ul class = "new_room_area">
+    <li class ="field"><p class = "new_room_title">ルーム情報登録</p></li>
+    <li class="field"><%= form.label :name, class:"labels" %><%= form.text_field :name, class:"room_field" %></li >
+    <li class="field field1"><%= form.label :introduction, class:"labels" %><%= form.text_area :introduction, class:"room_field field2" %></li >
+    <li class="field"><%= form.label :price, class:"labels" %><%= form.number_field :price, class:"room_field" %></li >
+    <li class="field"><%= form.label :address, class:"labels" %><%= form.text_field :address, class:"room_field" %></li >
+    <li><p class = "room_picture">ルーム画像</p><span class ="room_picture_choice"><button type="button" class="btn btn-outline-secondary rounded-pill new_picture"><%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %></button></span></li>
+    <li><%= form.submit class:"actions room_new_button"%></li>
+  </ul>
+    <%= form.hidden_field :user_id, value:current_user.id %>
+<% end %>

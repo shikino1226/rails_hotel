@@ -1,0 +1,55 @@
+<div class = "flex-container">
+  <div class = "flex-item1">
+    <% if @hotel.picture? %>
+      <%= image_tag @hotel.picture.url, :size => '600x400'%>
+    <% else %>
+      <%= image_tag "/assets/deault.jpg", :size => '600x400' %>
+    <% end %>
+    <div class = "flex-item1_1">
+      <div>  
+        <% if @user_avatar.avatar? %>
+          <%= image_tag @user_avatar.avatar.url, class: "icon_image"%>
+        <% else %>
+          <%= image_tag "/assets/deault.jpg", class: "icon_image"%>
+        <% end %>
+      </div>
+      <div>
+        <p class = "name1"><%= @hotel.name %></p>
+        <p class ="address1"><%= @hotel.address %></p>
+      </div>
+    </div>
+    <div class = "introduction1"><%= @hotel.introduction %></div>
+  </div>
+  <div class = "flex_item2">
+   <div class ="room_price">￥<%= @hotel.price %>/日</div>
+    <%= form_with url: new_reservation_path, method: :get, local: true do |f| %>
+      <table>
+        <tr><th><%= f.label :check_in ,"開始日（必須）" %></th></tr>
+        <tr><td><%= f.date_field :check_in, class: "date" %></td></tr>
+        <tr><th><%= f.label :check_out ,"終了日（必須）" %></th></tr>
+        <tr><td><%= f.date_field :check_out, class: "date" %></td></tr>
+        <tr><th><%= f.label :people ,"人数（必須）" %></th></tr>
+        <tr><td><%= f.text_field :people, class: "people_field" %></td></tr>
+        <%= f.hidden_field :hotel_id, value: @hotel.id %>
+        <%= f.hidden_field :price, value: @hotel.price %>
+        <%if user_signed_in? %>
+          <%= f.hidden_field :user_id, value:current_user.id  %>
+        <% end %>
+      </table>
+      <div>
+        <%if user_signed_in? %>
+        <%= f.submit '予約する' %>
+        <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: "link_to_login" %>
+        <%end%>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%if user_signed_in? %>
+  <%if @hotel.user_id == current_user.id %>
+    <%= link_to '編集', edit_hotel_path(@hotel) %>
+    <%= link_to "このルーム情報を削除する", hotel_path, method: :delete, data: {confirm: "本当に削除しますか？" }%>
+  <% end %>
+<% end %>
+<%= link_to '戻る', :back %>

@@ -1,0 +1,25 @@
+<%= form_with model: @reservation do |f| %>
+  <div class = "item">
+    <ul class = "item1">
+      <li class = "item1_1">予約内容確認</li>
+      <li class = "item1_3"><strong>¥</strong><%= @total_price %><strong>/ 日</strong></li>
+      <li><p class = "item1_2">開始日</p>
+        <p class = "item1_3"><%= @reservation.check_in %></p></li>
+      <li><p class = "item1_2">終了日</p>
+        <p class = "item1_3"><%= @reservation.check_out %></p></li>
+      <li><p class = "item1_2 item1_4">使用日数：<%= @total_day  %><strong>日</strong></p></li>
+      <li><p class = "item1_2 item1_4">人数：<%= @reservation.people %><strong>名</strong></p></li>
+      <li><p class = "item1_2">合計金額</p>
+        <p class = "item1_3">¥<%= @total_price %></p></li>
+      <li><p class = "item1_5">上記内容でよろしければ「予約を確定」を押してください</p></li>
+      <%= f.submit '予約を確定', class: "reservation_button1" %><br>
+      <%= link_to 'ルーム詳細に戻る', :back, class: "reservation_button2" %>
+      <%= f.hidden_field :hotel_id, value: @reservation.hotel_id %>
+      <%= f.hidden_field :check_in, value: @reservation.check_in %>
+      <%= f.hidden_field :check_out, value: @reservation.check_out %>
+      <%= f.hidden_field :people, value: @reservation.people %>
+      <%= f.hidden_field :total_price, value: @total_price %>
+      <%= f.hidden_field :user_id, value:current_user.id %>
+    </ul>
+  </div>
+<% end %>

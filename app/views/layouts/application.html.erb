@@ -4,12 +4,50 @@
     <title>RailsHotel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
   </head>
 
   <body>
+    <header>
+      <ul class = "header">
+        <li class = "header_img"><%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png") , root_path %></li>
+        <li class = "header_search"><%= search_form_for @search, url: search_hotels_path do |f| %>
+          <%= f.search_field :address_cont ,class: "header_search_field", placeholder: "エリア"%>
+        <% end %></li>
+        <li class = "header_search"><%= search_form_for @search, url: search_hotels_path do |f| %>
+          <%= f.search_field :name_or_introduction_or_address_cont ,class: "header_search_field", placeholder: "キーワード"%>
+        <% end %></li>
+      </ul>
+      <nav class = "nav"><% if user_signed_in? %>
+          <ul class = "icon_flex">         
+            <li><%= current_user.name %></li> 
+            <li><div class="menu">
+              <label for="menu_bar01">メニュー</label>
+              <input type="checkbox" class="input_none"id="menu_bar01" />
+              <ul id="links01">
+                <li><%= link_to 'ルーム登録', new_hotel_path %></li>
+                <li><%= link_to '予約済みルーム一覧', home_index_path %></li>
+                <li><%= link_to '登録済みルーム一覧', home_index2_path %></li>
+                <li><%= link_to '設定', home_profile_path %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </div></li>
+          </ul>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path, class: "logout new_user" %>
+          <%= link_to "ログイン", new_user_session_path, class: "logout login_user" %>
+        <% end %>
+      </nav>
+    </header>
+
+    <p class="notice"><%= notice %></p> 
+    <p class="alert"><%= alert %></p> 
     <%= yield %>
+
+    <footer>
+    <p class = "footer">© 2020 POTEPAN.INC.</p>
+    </footer>
   </body>
 </html>
