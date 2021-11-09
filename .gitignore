@@ -42,3 +42,4 @@ yarn-debug.log*
 
 /test/system/hotels_test.rb
 /vendor/bundle/ruby/3.0.0/bin/yard
+/vendor/bundle/ruby/3.0.0/gems
