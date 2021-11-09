@@ -46,3 +46,9 @@ yarn-debug.log*
 /vendor/bundle/ruby/3.0.0/extensions
 /vendor/bundle/ruby/3.0.0/gems/bcrypt-3.1.16
 /vendor/bundle/ruby/3.0.0/gems/binding_of_caller-1.0.0
+# ９
+
+/vendor/bundle/ruby/3.0.0/gems/carrierwave-2.2.2
+/vendor/bundle/ruby/3.0.0/gems/debug_inspector-1.1.0
+
+# 10
