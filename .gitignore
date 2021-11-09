@@ -54,3 +54,6 @@ yarn-debug.log*
 # 10
 /vendor/bundle/ruby/3.0.0/gems/devise-4.8.0
 /vendor/bundle/ruby/3.0.0/gems/image_processing-1.12.1
+# 11
+/vendor/bundle/ruby/3.0.0/gems/mini_magick-4.11.0
+/vendor/bundle/ruby/3.0.0/gems/orm_adapter-0.5.0
