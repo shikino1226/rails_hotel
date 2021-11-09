@@ -57,3 +57,6 @@ yarn-debug.log*
 # 11
 /vendor/bundle/ruby/3.0.0/gems/mini_magick-4.11.0
 /vendor/bundle/ruby/3.0.0/gems/orm_adapter-0.5.0
+#12
+/vendor/bundle/ruby/3.0.0/gems/pry-0.13.1
+/vendor/bundle/ruby/3.0.0/gems/pry-byebug-3.9.0
