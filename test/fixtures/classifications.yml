@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  salon: one
+  category: one
+
+two:
+  salon: two
+  category: two

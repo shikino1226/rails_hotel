@@ -1,0 +1,169 @@
+.room_area{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.room_box_area{
+  width: 500px;
+  height: 550px;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #5d627b;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  font-size: 30px;
+}
+.room_item{
+  padding: 10px;
+}
+.room_item_1{
+  padding: 10px;
+  position: relative;
+  right: -350px;
+}
+
+// ルーム新規登録
+.new_room_area{
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  height: 900px;
+  border: 1px solid gray;
+  font-size: 20px;
+}
+.room_field{
+  position: absolute;
+  right: 10%;
+  width: 60%;
+  height: 40px;
+}
+.new_room_title{
+  font-size: 30px;
+}
+.field{
+  padding: 50px;
+  border-bottom: 1px solid gray;
+}
+.field1{
+  height: 100px;
+  padding: 50px 50px 150px 50px;
+}
+.field2{
+  padding: 50px;
+  margin: 20px;
+}
+.icon_field{
+  position: relative;
+  top: -20px;
+  padding: 100px;
+}
+.border_top{
+  border-top: 1px solid gray;
+  padding: 10px;
+}
+.user_item1{
+  position: relative;
+  left: 0%;
+  height: 50px;
+  font-size: 20px;
+}
+.user_item2{
+  font-size: 20px;
+}
+.user_item3{
+  position: relative;
+  left: -40px;
+  font-size: 20px;
+}
+.icon_place{
+  position: relative;
+  left: 40%;
+}
+.profile_field{
+  border-radius: 5px;
+}
+.profile_field2{
+  position: relative;
+  left: -50px;
+  border-radius: 5px;
+  height: 150px;
+}
+.plofile_submit{
+  height: 50px;
+  width: 850px;
+  border: none;
+  background-color: skyblue;
+  color: white;
+}
+.room_picture{
+  padding: 30px;
+  font-size: 20px;
+  border-bottom: 1px solid gray;
+}
+.new_picture{
+  position: absolute;
+  right: 20%;
+  bottom: 140px;
+}
+.room_new_button{
+  background-color: skyblue;
+  font-size: 30px;
+  border-radius: 5px;
+  border: none; 
+  color: white;
+  height: 80px;
+  width: 150px;
+}
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+  .plofile_submit{
+    width: 600px;
+  }
+  .new_picture{
+    left: 200px;
+  }
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+  .plofile_submit{
+    width: 300px;
+  }
+  .field{
+    position: relative;
+    top:0px
+  }
+  .labels{
+    position: relative;
+    top: -40px;
+  }
+  .new_room_title{
+    font-size: 20px;
+  }
+  .room_picture{
+    padding-bottom: 100px;
+  }
+  .room_picture_choice{
+    position: relative;
+    top: 80px;
+    left: -200px;
+    border: 1px solid black;
+  }
+  .new_picture{
+    width: 300px;
+  }
+  .new_room_area{
+    width: 100%;
+  }
+  .room_new_button{
+    position: relative;
+    top: -30px;
+    left: 60px;
+    background-color: skyblue;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none; 
+    color: white;
+    height: 50px;
+    width: 100px;
+  }
+}

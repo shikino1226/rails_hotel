@@ -1,0 +1,19 @@
+<h1>検索結果</h1>
+<h2><%= @search_hotels_count %>件</h2>
+<ul class = "room_area">
+  <% @search_hotels.each do |hotel| %>
+    <%= link_to(hotel_path(hotel.id),class: "line_none") do  %>
+      <li class = "room_box_area"><div>
+        <% if hotel.picture? %>
+          <%= image_tag hotel.picture.url, :size => '500x400'%>
+        <% else %>
+          <%= image_tag "/assets/deault.jpg", :size => '500x400' %>
+        <% end %></div>
+        <div class = "room_item"><%= hotel.name %></div>
+        <div class = "room_item"><%= hotel.address %></div>
+        <div class = "room_item_1">¥<%= hotel.price %></div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= link_to '戻る', root_path %>

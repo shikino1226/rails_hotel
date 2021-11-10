@@ -1,0 +1,235 @@
+.menu {
+  max-width: 600px;
+}
+
+.menu a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #000;
+}
+
+.input_none {
+  display: none;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  background :#f4f4f4;
+  list-style: none;
+}
+
+.menu li {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#menu_bar01:checked ~ #links01 li{
+  height: 54px;
+  opacity: 1;
+}
+
+/* ↓ここから下は、ブラウザがデフォルトで持っているCSSを打ち消すCSS↓ */
+html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align:baseline;
+  list-style: none;
+}
+/* ↑ブラウザがデフォルトで持っているCSSを打ち消すCSSここまで↑ */
+
+/* ↓外枠↓ */
+.container {
+  margin: 10px;
+  border: 1px solid #ccc;
+}
+/* ↓タブを横並び↓ */
+.tab-list {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+/* ↓タブのデザイン↓ */
+.tab {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  border-left: solid 1px #CCC;
+  border-bottom: solid 1px #CCC;
+}
+.tab:first-child {
+  border-left: none;
+}
+/* ↓タブがアクティブになっている時のデザイン↓ */
+.tab-active {
+  color: #FFF;
+  background: #19b5d1;
+  transition: all 0.2s ease-in-out;
+}
+/* ↓タブの中身↓ */
+.tabbox {
+  /* ↓タブの中身を最初は非表示↓ */
+  display: none;
+  /* ↓タブの中身の余白↓ */
+  padding: 15px;
+}
+/* ↓このクラスがついている時だけタブの中身を表示↓ */
+.box-show {
+  display: block;
+  text-align: left;
+}
+.user_item{
+  font-size: 20px;
+}
+.profile_edit{
+  display: block;
+  text-decoration: none;  
+  background-color: skyblue;
+  color: white!important;
+  font-size: 30px;
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+.account{
+  border-bottom: 1px solid gray;
+  height: 50px;
+  font-size: 30px;
+}
+// 新規アカウント
+
+.Mandatory{
+  height: 40px;
+  width: 80px;
+  background-color: red;
+  border-radius: 7px;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+.new_account_back{
+  border: 1px solid gray;
+  width: 500px;
+  height: 600px;
+  text-align: center;
+  position: relative;
+  left: 40%;
+}
+.new_account_field{
+  background-color: white;
+}
+.new_account_field1{
+  height: 60px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.account_submit{
+  height: 50px;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: skyblue;
+  border: none;
+  color: white;
+  position: relative;
+  top: 10px;
+}
+// ログインアカウント
+.login_page{
+  width: auto;
+}
+.account_title{
+  position: relative;
+  left: 40%;
+}
+.login_account_back{
+  position: relative;
+  left: 40%;
+  border: 1px solid gray;
+  width: 500px;
+  height: 600px;
+  text-align: center;
+}
+.login_account_field{
+  background-color: white;
+}
+.login_account_field1{
+  height: 60px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.link_new{
+  text-decoration: none;
+  font-size: 20px;
+  color: blue!important;
+}
+// アカウント編集
+.edit_account_field1{
+  height: 100px;
+  font-size: 20px;
+}
+.edit_account_field2{
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.edit_back{
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 10px 180px;
+  border-radius: 5px;
+  text-align: center;
+}
+.new_account_back{
+  height: 600px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+  .new_account_back{
+    position: relative;
+    left: 150px;
+  }
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+  .account{
+    font-size: 15px;
+  }
+  .new_account_back{
+    left: 0px;
+    width: auto;
+    height: 700px;
+  }
+  .edit_account_field1{
+    height: 130px;
+  }
+  .edit_back{
+    padding: 10px 50px;
+  }
+  .account_submit{
+    width: 150px;
+  }
+  .login_page{
+    position: relative;
+    left: -120px;
+    width: auto;
+  }
+  .login_account_back{
+    width: auto;
+  }
+}

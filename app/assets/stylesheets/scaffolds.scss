@@ -1,0 +1,430 @@
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+
+a {
+  color: #000; }
+
+a:visited {
+  color: #666; }
+
+a:hover {
+  color: #fff;
+  background-color: #000; }
+
+th {
+  padding-bottom: 5px; }
+
+td {
+  padding: 0 5px 7px; }
+
+div.field,
+div.actions {
+  margin-bottom: 10px; }
+
+#notice {
+  color: green; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff; }
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square; }
+
+label {
+  display: block; }
+
+// トップ画面
+.header{
+  position: relative;
+  display: flex;
+  background-color: black;
+  width: 100%;
+  height: 100px;
+}
+
+.header_img{
+  position: relative;
+  background-color: black;
+  height: 100px;
+  }
+
+.header_search_field{
+  height: 50px;
+}
+
+.header_search{
+  color: white;
+  padding: 20px;
+}
+
+.nav{
+  color: white;
+}
+
+.icon_flex{
+  display: flex;
+  width: 400px;
+  justify-content: space-around;
+  font-size: 25px;
+  position: absolute;
+  right: 0%;
+  top: 30px;
+  z-index: 1;
+}
+
+.top_img{
+  position: relative;
+  top: -100px;
+  width: 100%;
+  height: 800px;
+}
+
+.seach_box{
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  top: 15%;
+  left: 30%;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.search_text{
+  position: absolute;
+  top: 10%;
+  margin: 5px;
+  line-height:1.4em;
+  font-size: 30px;
+}
+.logout{
+  display: block;
+  position: absolute;
+  text-decoration: none;
+  color: white!important;
+  font-size: 30px;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+}
+.new_user{
+  top: 5px;
+  right: 200px;
+  background-color: skyblue;
+}
+.login_user{
+  top: 5px;
+  right: 5px;
+  background-color: #CCCC;
+}
+.search_area{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+}
+
+.search_field{
+  position: absolute;
+  width: 750%;
+  height: 45px;
+  border: 3px solid;
+  border-color: skyblue;
+  border-radius: 5px;
+}
+
+.search_button{
+  position: absolute;
+  bottom: -80px;
+  background-color: skyblue;
+  width: 750%;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  height: 45px;
+}
+
+.recommendation{
+  display: flex;
+  width: 70%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.place{
+  position: relative;
+  bottom: 40px;
+  left: 40%;
+  font-size: 40px;
+  color: white;
+}
+
+.footer{
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  background-color: #000;
+  color: white;
+  font-size: 20px;
+  padding-top: 80px;
+}
+
+.icon_image {
+  width: 150px;
+  height: 150px;
+  //サイズ指定
+  border-radius: 100px;
+  //画像を丸くする
+  object-fit: cover;
+  //タテヨコ比を変えないままトリミング
+}
+
+.notice{
+  font-size: 25px;
+  color: #c00;
+}
+
+// ユーザー予約一覧
+.reserved_item{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.reserved_item > li{
+  width: 200px;
+}
+
+.re_item1{
+  flex-basis: 230px;
+}
+
+.re_item2{
+  flex-basis: 25%;
+}
+
+.re_item3{
+  flex-basis: 10%;
+}
+
+.re_item4{
+  flex-basis: 15%;
+}
+
+.re_item5{
+  flex-basis: 10%;
+}
+
+.re_item6{
+  flex-basis: 10%;
+}
+
+.re_item7{
+  flex-basis: 10%;
+}
+
+.reserved_rooms{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.reserved_rooms > li{
+  border: 1px solid white;
+  list-style: none;
+  flex-grow: 1;
+  height: 200px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.rooms1{
+  flex-basis: 20%;
+}
+.rooms2{
+  flex-basis: 20%;
+  padding-top: 90px;
+}
+.rooms3{
+  flex-basis: 15%;
+  padding-top: 90px;
+}
+.rooms4{
+  flex-basis: 15%;
+  padding-top: 90px;
+}
+.rooms5{
+  flex-basis: 10%;
+  padding-top: 90px;
+}
+.rooms6{
+  flex-basis: 10%;
+  padding-top: 90px;
+}
+.rooms7{
+  flex-basis: 10%;
+  padding-top: 90px;
+}
+
+.reserved_area,.reserved_rooms:nth-child(odd){
+	background: #EEEEEE;
+}
+
+.line_none{
+  text-decoration: none;
+  border: none;
+}
+.delete_reservation{
+  position: relative;
+  top: 80px;
+  width: 100px;
+}
+
+// ユーザー登録済みホテル
+.hotels_item{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.made_hotel{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.made_hotel > li{
+  border: 1px solid white;
+  list-style: none;
+  flex-grow: 1;
+  height: 200px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.made_area,.made_hotel:nth-child(odd){
+	background: #EEEEEE;
+}
+
+.ho_item1{
+  width: 30%;
+}
+.ho_item2{
+  width: 15%;
+}
+.ho_item3{
+  width: 15%;
+}
+.ho_item4{
+  width: 10%;
+}
+.ho_item5{
+  width: 30%;
+}
+
+.hotel1{
+  width: 30%;
+}
+.hotel2{
+  width: 15%;
+  padding-top: 90px;
+}
+.hotel3{
+  width: 15%;
+  padding-top: 90px;
+}
+.hotel4{
+  width: 10%;
+  padding-top: 90px;
+}
+.hotel5{
+  width: 30%;
+  padding-top: 90px;
+}
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+  .header_search{
+    display: none;
+  }
+  .seach_box{
+    position: absolute;
+    left: 10%;
+  }
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+  .nav{
+    position: relative;
+    top: -100px;
+    left: 50px;
+  }
+  .seach_box{
+    position: absolute;
+    width: 260px;
+    height: 400px;
+    top: 40%;
+    left: 10%;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  .header{
+    height: 200px;
+  }
+  .search_field{
+    width: 350%;
+  }
+  .search_button{
+    width: 350%;
+  }
+  .hotel1, .ho_item1{
+    display: none;
+  }
+  .logout{
+    width: 100px;
+    font-size: 20px;
+  }
+  .new_user{
+    right: 200px;
+  }
+  .login_user{
+    right: 70px;
+  }
+}

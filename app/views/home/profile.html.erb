@@ -1,0 +1,45 @@
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |message| %>
+    <ul>
+      <li><%= message %></li>
+    </ul>
+  <% end %>
+<% end %>
+<div class="container">
+  <ul class="tab-list">
+    <li class="tab box-active">アカウント</li>
+    <li class="tab">プロフィール</li>
+  </ul>
+  <div class="tabbox-contents">
+    <div class="tabbox">
+      <p class = "account">アカウント</p>
+      <p class = "account">メールアドレス:<%= current_user.email %></p><br />
+      <p class = "account">パスワード:********</p><br />
+      <%= link_to '編集', edit_user_registration_path , class:"profile_edit"%>
+    </div>
+
+    <div class="tabbox  box-show">
+      <% if current_user.avatar? %>
+        <%= image_tag current_user.avatar.url, class: "icon_image icon_place" %>
+      <% else %>
+        <%= image_tag "/assets/deault.jpg", class: "icon_image icon_place" %>
+      <% end %>
+      <%= form_with method: :post, url:home_profile_path, local: true do |f| %>
+        <p class = "user_item1">アイコン画像</p>
+        <button type="button" class="btn btn-outline-secondary rounded-pill icon_field ">
+          <%= f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png' %>
+        </button>
+        <div class="field border_top">
+          <p class = "user_item2">名前</p>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name" ,value: current_user.name, class: "profile_field" %>
+        </div>
+        <div class="field">
+          <p class = "user_item3">自己紹介</p>
+          <%= f.text_area :profile, autofocus: true, autocomplete: "profile" ,value: current_user.profile, class: "profile_field2" %>
+        </div>
+        <%= f.hidden_field :id, value:current_user.id %>
+        <div class="actions"><%= f.submit "更新する" ,class:" plofile_submit" %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
